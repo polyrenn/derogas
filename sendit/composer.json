@@ -1,0 +1,7 @@
+{
+    "require": {
+        "nezamy/route": "^1.2",
+        "firebase/php-jwt": "^5.0",
+        "hhxsv5/php-sse": "~1.0"
+    }
+}

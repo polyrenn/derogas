@@ -1,0 +1,195 @@
+[
+    {
+        "name": "firebase/php-jwt",
+        "version": "v5.0.0",
+        "version_normalized": "5.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/firebase/php-jwt.git",
+            "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+            "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": " 4.8.35"
+        },
+        "time": "2017-06-27T22:17:23+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Firebase\\JWT\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Neuman Vong",
+                "email": "neuman+pear@twilio.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anant Narayanan",
+                "email": "anant@php.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+        "homepage": "https://github.com/firebase/php-jwt"
+    },
+    {
+        "name": "hhxsv5/php-sse",
+        "version": "v1.1.6",
+        "version_normalized": "1.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hhxsv5/php-sse.git",
+            "reference": "2d808a249b59f912b6bd74efe6216783aa5fcd28"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hhxsv5/php-sse/zipball/2d808a249b59f912b6bd74efe6216783aa5fcd28",
+            "reference": "2d808a249b59f912b6bd74efe6216783aa5fcd28",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~6.0"
+        },
+        "time": "2018-11-08T11:50:36+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hhxsv5\\SSE\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Xie Biao",
+                "email": "hhxsv5@sina.com"
+            }
+        ],
+        "description": "A simple and efficient library implemented HTML5's server-sent events by PHP, is used to real-time push events from server to client, and easier than Websocket, instead of AJAX request.",
+        "homepage": "https://github.com/hhxsv5/php-sse",
+        "keywords": [
+            "Server-Sent Events",
+            "event-stream",
+            "events",
+            "eventsource",
+            "sever-events",
+            "sse"
+        ]
+    },
+    {
+        "name": "nezamy/route",
+        "version": "v1.2.6",
+        "version_normalized": "1.2.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nezamy/route.git",
+            "reference": "8a5050b028ee39b383a949058a35baa284f396a0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nezamy/route/zipball/8a5050b028ee39b383a949058a35baa284f396a0",
+            "reference": "8a5050b028ee39b383a949058a35baa284f396a0",
+            "shasum": ""
+        },
+        "require": {
+            "nezamy/support": "1.0.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2019-05-25T21:09:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "System\\": "system"
+            },
+            "files": [
+                "system/function.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mahmoud Elnezamy",
+                "email": "mahmoud@nezamy.com",
+                "homepage": "http://nezamy.com",
+                "role": "Full Stack Web Developer"
+            }
+        ],
+        "description": "Route - Fast, flexible routing for PHP, enabling you to quickly and easily build RESTful web applications.",
+        "homepage": "https://nezamy.com/route",
+        "keywords": [
+            "api",
+            "justframework",
+            "restful",
+            "route"
+        ]
+    },
+    {
+        "name": "nezamy/support",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nezamy/support.git",
+            "reference": "8803292708fbfa857bdd056c9b9dc883adc51414"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nezamy/support/zipball/8803292708fbfa857bdd056c9b9dc883adc51414",
+            "reference": "8803292708fbfa857bdd056c9b9dc883adc51414",
+            "shasum": ""
+        },
+        "time": "2018-06-04T14:53:46+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "System\\Support\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mahmoud Elnezamy",
+                "email": "mahmoud@nezamy.com",
+                "homepage": "http://nezamy.com",
+                "role": "Full Stack Web Developer"
+            }
+        ],
+        "description": "Support",
+        "homepage": "https://github.com/nezamy/support",
+        "keywords": [
+            "framework",
+            "justframework",
+            "micro",
+            "support"
+        ]
+    }
+]
