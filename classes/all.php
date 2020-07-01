@@ -2,7 +2,7 @@
     
     
     
-  $connect = mysqli_connect('localhost', 'root', 'aiico20_A#@MGsyPP', 'solex');
+  $connect = mysqli_connect('localhost', 'root', 'aicogas', 'solex');
     
     // if(!$connect){
     
