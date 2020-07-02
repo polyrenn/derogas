@@ -1079,7 +1079,7 @@ overflow-y: hidden;
                                   
                                   
                                   
-                                // }
+                                 }
 
                                       $cross = "SELECT * FROM switchLog WHERE  datee = '$date' AND branch = '$branchCode'";
                                       $ggca = mysqli_query($connect, $cross);
