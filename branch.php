@@ -932,7 +932,7 @@ overflow-y: hidden;
                                     ?><td colspan="2">
                                     <?php 
 
-                                    $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' ";
+                                    $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' ";
                                     $ar = mysqli_query($connect, $arr);
 
                                     while($a = mysqli_fetch_array($ar)){
