@@ -1,8 +1,8 @@
 <?php
     
+    error_reporting (E_ALL ^ E_NOTICE);
     
-    
-  $connect = mysqli_connect('localhost', 'root', 'aicogas', 'solex');
+  $connect = mysqli_connect('localhost', 'root', 'YES', 'solex');
     
     // if(!$connect){
     
@@ -1308,20 +1308,20 @@
                         <tr>
                         <th>
                         <div class='form-check'>
-                        <input type='checkbox'  value=".$kg." id=".$kid."   name='kgg[]' />
+                        <input type='checkbox' class='checkbox-d'  value=".$kg." id=".$kid."   name='kgg[]' />
                         <label class='form-check-label'  for='exampleCheck1'>".$kg." Kg</label>
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='text' class='form-control' value=".number_format($price)." name='fiftykgvalue' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$quant." name='qu[]' />
+                            <input type='number' class='form-control qt-d'  id=".$quant." name='qu[]' />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='number' class='form-control'  id=".$ttqq." name='tq[]' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$amount." name='am[]' readonly />
+                            <input type='number' class='form-control amount-d'  id=".$amount." name='am[]' readonly />
                             </div></th>
                             </tr>
                             ";
@@ -1343,6 +1343,20 @@
                         </script>
                         ";
                         echo "
+                        <tr>
+                           <th>
+                            <div class='form-check'>Total</div>
+                           </th>
+                           <th></th>
+                           <th></th>
+                           <th></th>
+                           <th class='bg-success'>
+                            <div id='total-text-d' class='total-text form-group mx-sm-3 mb-2'>
+                                0
+                            </div>
+                           </th>
+                       
+                        </tr>
                         <tr class='bg-danger'>
                         
                         <th colspan='5'><h5 class='text-white' align='center'><b>Do not sell this category unless approved by your supervisor or manager</h5></t>
@@ -1412,20 +1426,20 @@
                         <tr>
                         <th>
                         <div class='form-check'>
-                        <input type='checkbox'  value=".$kg." id=".$kid."   name='kgg[]' />
+                        <input type='checkbox' class='checkbox-e'  value=".$kg." id=".$kid."   name='kgg[]' />
                         <label class='form-check-label'  for='exampleCheck1'>".$kg." Kg</label>
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='text' class='form-control' value=".number_format($price)." name='fiftykgvalue' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$quant." name='qu[]' />
+                            <input type='number' class='form-control qt-e'  id=".$quant." name='qu[]' />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='number' class='form-control'  id=".$ttqq." name='tq[]' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$amount." name='am[]' readonly />
+                            <input type='number' class='form-control amount-e'  id=".$amount." name='am[]' readonly />
                             </div></th>
                             </tr>
                             ";
@@ -1446,6 +1460,20 @@
                         </script>
                         ";
                         echo "
+                        <tr>
+                           <th>
+                            <div class='form-check'>Total</div>
+                           </th>
+                           <th></th>
+                           <th></th>
+                           <th></th>
+                           <th class='bg-success'>
+                            <div id='total-text-e' class='total-text form-group mx-sm-3 mb-2'>
+                                0
+                            </div>
+                           </th>
+                       
+                        </tr>
                         <tr class='bg-danger'>
                         
                         <th colspan='5'><h5 class='text-white' align='center'><b>Do not sell this category unless approved by your supervisor or manager</h5></t>
@@ -1518,20 +1546,20 @@
                         <tr>
                         <th>
                         <div class='form-check'>
-                        <input type='checkbox'  value=".$kg." id=".$kid."   name='kgg[]' />
+                        <input type='checkbox' class='checkbox'  value=".$kg." id=".$kid."   name='kgg[]' />
                         <label class='form-check-label'  for='exampleCheck1'>".$kg." Kg</label>
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='text' class='form-control' value=".number_format($price)." name='fiftykgvalue' readonly />
+                            <input type='text' class='form-control price' value=".number_format($price)." name='fiftykgvalue' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$quant." name='qu[]' />
+                            <input type='number' class='form-control qt'  id=".$quant." name='qu[]' />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='number' class='form-control'  id=".floatval($ttqq)." name='tq[]' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$amount." name='am[]' readonly />
+                            <input type='number' class='form-control amount'  id=".$amount." name='am[]' readonly />
                             </div></th>
                             </tr>
                             ";
@@ -1552,11 +1580,26 @@
                         </script>
                         ";
                         echo "
+                        <tr>
+                           <th>
+                            <div class='form-check'>Total</div>
+                           </th>
+                           <th></th>
+                           <th></th>
+                           <th></th>
+                           <th class='bg-success'>
+                            <div id='total-text' class='total-text form-group mx-sm-3 mb-2'>
+                                0
+                            </div>
+                           </th>
+                       
+                        </tr>
                         <tr class='bg-danger'>
 
                         <th colspan='5'><h5 class='text-white' align='center'><b>Do not sell this category unless approved by your supervisor or manager</h5></t>
     
                         </tr>
+                        
                         <tr class='bg-danger'>
                         <th>
                         <div class='form-check'>
@@ -1624,20 +1667,20 @@
                         <tr>
                         <th>
                         <div class='form-check'>
-                        <input type='checkbox'  value=".$kg." id=".$kid."   name='kgg[]' />
+                        <input type='checkbox' class='checkbox-o'  value=".$kg." id=".$kid."   name='kgg[]' />
                         <label class='form-check-label'  for='exampleCheck1'>".$kg." Kg</label>
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='text' class='form-control' value=".number_format($price)." name='fiftykgvalue' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$quant." name='qu[]' />
+                            <input type='number' class='form-control qt-o'  id=".$quant." name='qu[]' />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
                             <input type='number' class='form-control'  id=".$ttqq." name='tq[]' readonly />
                             </div></th>
                             <th><div class='form-group mx-sm-3 mb-2'>
-                            <input type='number' class='form-control'  id=".$amount." name='am[]' readonly />
+                            <input type='number' class='form-control amount-o'  id=".$amount." name='am[]' readonly />
                             </div></th>
                             </tr>
                             ";
@@ -1658,6 +1701,20 @@
                         </script>
                         ";
                         echo "
+                        <tr>
+                           <th>
+                            <div class='form-check'>Total</div>
+                           </th>
+                           <th></th>
+                           <th></th>
+                           <th></th>
+                           <th class='bg-success'>
+                            <div id='total-text-o' class='total-text form-group mx-sm-3 mb-2'>
+                                0
+                            </div>
+                           </th>
+                       
+                        </tr>
                         <tr class='bg-danger'>
                         
                         <th colspan='5'><h5 class='text-white' align='center'><b>Do not sell this category unless approved by your supervisor or manager</h5></t>

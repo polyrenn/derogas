@@ -1,7 +1,7 @@
     <?php
 
     session_start();
-
+   
 
     require_once ('classes/all.php');
     date_default_timezone_set("Africa/Lagos");
@@ -126,6 +126,7 @@
 
 <!-- Custom styles for this template-->
 <link href="css/sb-admin-2.min.css" rel="stylesheet" media="all">
+<link href="css/crb.css" rel="stylesheet" media="all">
 
 
 
@@ -662,7 +663,7 @@ function printContent(el){
 <thead>
 <tr>
 <th scope='col'>Cylinder Sizes</th>
-<th scope='col'><h5 align="center">Cylinder Price</h5></th>
+<th scope='col'><h5 id="hh" align="center">Cylinder Price</h5></th>
 <th scope='col'><h5 align="center">Purchase Quantity</h5></th>
 <th scope='col'><h5 align="center">Total Kg</h5></th>
 <th scope='col'><h5 align="center">Amount</h5></th>
@@ -2838,6 +2839,7 @@ function printContent(el){
         <!-- Page level custom scripts -->
         <script src="js/demo/chart-area-demo.js"></script>
         <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="js/crb.js"></script>
 
 
 
