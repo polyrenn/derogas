@@ -1785,11 +1785,11 @@
                 while($row = mysqli_fetch_array($run)){
                     $crb = $row['crbnumber'];
                     
-                    echo "<form action=' ' method='POST'>
+                    echo "<form class='crb-queue-no' action=' ' method='POST'>
                     <button class='btn btn-outline-primary' type='submit' name='salesCrb' value=".$crb.">".$crb."</button>
                     </form>
                     ";
-                    echo "<hr>";
+                    //echo "<hr>";
                     
                 }
             }
