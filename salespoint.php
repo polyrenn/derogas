@@ -779,6 +779,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/salespoint.css">
+    </li>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -1182,16 +1184,18 @@
             
                   <div class="row">
 
-                        <div class="col col-lg-1">
+                        <div class="col">
 
                           <div>
                               <small>CRBS</small>
                           </div>
-                              <div style="width:auto; height:auto; overflow-y:scroll;">
+                              <div class="crb-list">
                               <hr>
                               <?php $createStation->pullCRBs(); ?>
                               </div>
                         </div>
+                   </div>
+                   <div class="row">
 
                         <div class="col col-lg-7">
 
