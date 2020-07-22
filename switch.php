@@ -96,7 +96,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="salesanalysis.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="salesanalysis.php">
             <i class="fas fa-fw fa-cog"></i>
             <span><b>Daily Sales Summary</b></span>
           </a>
@@ -112,7 +112,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="stockanalysis.php" data-toggle="collapse" data-target="#colThree" aria-expanded="true" aria-controls="colThree">
+            <a class="nav-link collapsed" href="stockanalysis.php">
               <i class="fas fa-fw fa-cog"></i>
               <span><b>Daily Stock Summary</b></span>
             </a>
@@ -127,7 +127,7 @@
           </li>
             <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="badCrbs.php" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="badCrbs.php">
             <i class="fas fa-fw fa-cog"></i>
             <span><b>Declined Sales</b></span>
           </a>
@@ -165,7 +165,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="switch.php" data-toggle="collapse" data-target="#colsix" aria-expanded="true" aria-controls="colsix">
+            <a class="nav-link collapsed" href="switch.php">
               <i class="fas fa-fw fa-cog"></i>
               <span><b>Switch Tank</b></span>
             </a>
@@ -192,7 +192,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="Loyalty.php" data-toggle="collapse" data-target="#coleight" aria-expanded="true" aria-controls="coleight">
+                <a class="nav-link collapsed" href="Loyalty.php">
                   <i class="fas fa-fw fa-cog"></i>
                   <span><b>Loyalty Gift Tool</b> </span>
                 </a>

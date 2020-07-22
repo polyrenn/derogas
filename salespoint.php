@@ -1416,7 +1416,7 @@
                       </div>
 
                      
-                <div class="col col-md-4">
+                <div class="col col-md-5">
 
                     <div class="card shadow">
                     
