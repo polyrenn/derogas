@@ -1422,11 +1422,11 @@
                     
                         <div class="card-body">
 
-<div id='crbprint'>
+<div class='crbprint' id='crbprint'>
 
 <?php
     
-    echo "<h4 align='center'><b>".$company."</b></h4>";
+    echo "<h1 style='font-size:40px' align='center'><b>".$company."</b></h1>";
     echo "<hr>";
     
     $sql = "SELECT company.CompanyName, gasStations.Bname, gasStations.Baddress, gasStations.Bcode FROM company, gasStations WHERE company.CompanyCode = gasStations.company AND company.CompanyName != 'Almarence' AND company.CompanyName = '$company' ";
@@ -1482,7 +1482,7 @@
     
     echo "
     
-    <table class='table' border='6'>
+    <table class='receipt-t'>
     <thead>
     <tr>
     <th scope='col'><small><h5><b>Cylinder Type</b></h5></small></th>
@@ -1528,11 +1528,11 @@
             $quantity = $ro['SUM(quantity)'];
             $amount = $ro['SUM(amount)'];
             echo "<tr class='bg-primary text-white'>";
-            echo "<th scope='row' colspan='4'><h5 align='left'><small><b>Total</b></h5></small></th>";
+          // echo "<th scope='row' colspan='4'><h5 align='left'><small><b>Total</b></h5></small></th>";
             echo "</tr>";
             
             echo "<tr class='bg-primary text-white'>";
-        echo "<th scope='row'><h5><small><h5><b>&nbsp;</b></h5></small></th>";
+        echo "<th scope='row'><h5><small><h5><b>Total</b></h5></small></th>";
             echo "<th scope='row'><h5><small><h5><b>".$quantity."</b></h5></small></th>";
             echo "<th scope='row'><h5><small><h5><b>".$kg." Kg</b></h5></small></th>";
             echo "<th scope='row'><h5><small><h5><b>".number_format($amount)." NGN</b></h5></small></th>";
