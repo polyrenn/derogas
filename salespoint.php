@@ -1423,6 +1423,9 @@
                         <div class="card-body">
 
 <div class='crbprint' id='crbprint'>
+ <style>
+
+ </style>   
 
 <?php
     
@@ -1465,14 +1468,17 @@
 
         $sll = "SELECT * FROM stepfinal WHERE branch = '$branchCode' AND reciept = '$rec' ";
                                     $gas = mysqli_query($connect, $sll);
+        echo "<div class='sales-details'>
+                <h5 style='font-size: 32px'><b>Customer's Name: ".$cname."</b></h5>
+                <h5 style='font-size: 32px'><b>Customer's Phone: ".$phone."</b></h5>
+                <h5 style='font-size: 32px'><b>Sales Attendant: ".$username."</b></h5>
+                <h5 style='font-size: 32px'><b>Date: ".$datee."</b></h5>
+                <h5 style='font-size: 32px'><b>Time: ".$ti."</b></h5>
+                <hr>
+                <h2 style='font-size: 32px'><b>Reciept No: ".$rec."</b></h2>
+               </div> 
+        ";
         
-        echo "<small><h5><b>Customer's Name: ".$cname."</b></h5></small>";
-        echo "<small><h5><b>Customer's Phone: ".$phone."</b></h5></small>";
-        echo "<small><h5><b>Sales Attendant: ".$username."</b></h5></small>";
-         echo "<small><h5><b>Date: ".$datee."</b></h5></small>";
-        echo "<small><h5><b>Time: ".$ti."</b></h5></small>";
-        echo "<hr>";
-        echo "<small><h2><b>Reciept No: ".$rec."</b></h2></small>";
         
         
     }
