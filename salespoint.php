@@ -779,7 +779,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css?=1.1" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/salespoint.css?v=1.1">
+    <link rel="stylesheet" href="css/salespoint.css?v=1.2">
     </li>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
