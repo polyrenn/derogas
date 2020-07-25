@@ -5,7 +5,7 @@
 
   require_once ('classes/all.php');
   date_default_timezone_set("Africa/Lagos");
-  $id = $_SESSION['id'];s
+  $id = $_SESSION['id'];
   $username = $_SESSION['username'];
   $company = $_SESSION['CompanyName'];
   $branch = $_SESSION['Bname'];
@@ -779,7 +779,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/salespoint1.css">
+    <link rel="stylesheet" href="css/salespoint.css">
     </li>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
