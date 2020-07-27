@@ -1929,10 +1929,10 @@
                     $branch = $row['Bname'];
                     $company = $row['CompanyName'];
                     $branchCode = $row['Bcode'];
-                    
+                    $date = $_POST['date'];
                     
                     echo " <th scope='col'>".$company."<br>".$branch."<br>
-                    <form action='branch.php' method='POST'>
+                    <form action='branch.php?date=$date&branch=$branchCode' method='POST'>
                     <button class='btn btn-outline-info' name='gotobranch' value='".$branchCode."'>Goto sales log</button>
                     </form>
                     </th>";
@@ -1949,10 +1949,11 @@
                     $branch = $row['Bname'];
                     $company = $row['CompanyName'];
                     $branchCode = $row['Bcode'];
+                    $date = $_POST['date'];
                     
                     
                     echo " <th scope='col'>".$company."<br>".$branch."<br>
-                    <form action='branch.php' method='POST'>
+                    <form action='branch.php?date=$date&branch=$branchCode' method='POST'>
                     <button class='btn btn-outline-info' name='gotobranch' value='".$branchCode."'>Goto sales log</button>
                     </form>
                     </th>";
