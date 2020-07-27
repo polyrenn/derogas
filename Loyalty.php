@@ -5,12 +5,8 @@
 
   require_once ('classes/all.php');
   $id = $_SESSION['id'];
-    $username = $_SESSION['username'];
-    $company = $_SESSION['CompanyName'];
-    $designation = $_SESSION["designation"];
-    $branch = $_SESSION['Bname'];
-    $branchCode = $_SESSION['Bcode'];
-    $companyCode = $_SESSION['CompanyCode'];
+  $username = $_SESSION['username'];
+      $designation  = $_SESSION["designation"];
   $createStation = new All($connect);
   if(!isset($_SESSION['username'])){
     header('Location: portal.php');
@@ -23,35 +19,41 @@
           $link = "adminPage.php";
       }
 
+// Get Current Pagination No
+if (isset($_GET['page_no']) && $_GET['page_no']!="") {
+  $page_no = $_GET['page_no'];
+  } else {
+      $page_no = 1;
+    }
 
+$total_records_per_page = 10;    
+// Pagination Variables
+$offset = ($page_no-1) * $total_records_per_page;
+$previous_page = $page_no - 1;
+$next_page = $page_no + 1;
+$adjacents = "2";
+
+$pagination_sql = "SELECT COUNT(*) As total_records FROM customers";
+$result_count = mysqli_query($connect, $pagination_sql);
+$total_records = mysqli_fetch_array($result_count);
+$total_records = $total_records['total_records'];
+$total_no_of_pages = ceil($total_records / $total_records_per_page);
+$second_last = $total_no_of_pages - 1;
+echo $total_no_of_pages;
+$branch_get = $_GET['bcode'];
 
   if(isset($_POST['submit'])){
       $branch = $_POST['bcode'];
 
-      $sql = "SELECT * FROM customers WHERE branch = '$branch' ORDER BY CpurchaseCount DESC";
+      $sql = "SELECT * FROM customers WHERE branch = '$branch' ORDER BY CpurchaseCount DESC LIMIT $offset, $total_records_per_page";
   $gosql = mysqli_query($connect, $sql);
   }else{
-     $designation = $_SESSION["designation"];
-
-    if ($designation == 'Supervisor') {
-       $company = $_SESSION['CompanyName'];
-      $greed = " SELECT * FROM gasStations WHERE company = '$companyCode' ";
-        $runG = mysqli_query($connect, $greed);
-        $bros = mysqli_fetch_array($runG);
-        $bra = $bros['Bcode'];
-        
-
-
-        $sql = "SELECT * FROM customers WHERE branch = '$bra' ORDER BY CpurchaseCount DESC";
-  $gosql = mysqli_query($connect, $sql);
-    }else{
-       $sql = "SELECT * FROM customers ORDER BY CpurchaseCount DESC";
-  $gosql = mysqli_query($connect, $sql);
-    }
-
-     
+      $sql = "SELECT * FROM customers WHERE branch = '$branch_get' ORDER BY CpurchaseCount DESC LIMIT $offset, $total_records_per_page";
+      $gosql = mysqli_query($connect, $sql);
   }
-
+  print_r($_GET);
+  print_r($_POST);
+  
   ?>
 
 <!DOCTYPE html>
@@ -111,7 +113,7 @@ Sales
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="salesanalysis.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="salesanalysis.php">
             <i class="fas fa-fw fa-cog"></i>
             <span>Daily Sales Summary</span>
           </a>
@@ -127,7 +129,7 @@ Sales
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="stockanalysis.php" data-toggle="collapse" data-target="#colThree" aria-expanded="true" aria-controls="colThree">
+            <a class="nav-link collapsed" href="stockanalysis.php">
               <i class="fas fa-fw fa-cog"></i>
               <span>Daily Stock Summary</span>
             </a>
@@ -142,7 +144,7 @@ Sales
           </li>
             <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="badCrbs.php" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="badCrbs.php">
             <i class="fas fa-fw fa-cog"></i>
             <span>Declined Sales</span>
           </a>
@@ -180,7 +182,7 @@ Sales
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="switch.php" data-toggle="collapse" data-target="#colsix" aria-expanded="true" aria-controls="colsix">
+            <a class="nav-link collapsed" href="switch.php">
               <i class="fas fa-fw fa-cog"></i>
               <span>Switch Tank</span>
             </a>
@@ -207,7 +209,7 @@ Sales
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="loyalty.php" data-toggle="collapse" data-target="#coleight" aria-expanded="true" aria-controls="coleight">
+                <a class="nav-link collapsed" href="loyalty.php">
                   <i class="fas fa-fw fa-cog"></i>
                   <span>Loyalty Gift Tool </span>
                 </a>
@@ -318,7 +320,6 @@ Sales
 
               </div>
 
-
             
 
 
@@ -414,6 +415,29 @@ Sales
                           ?>
                       </tbody>
                           </table>
+                          <ul class="pagination">
+                            <?php if($page_no > 1){
+                            echo "<li><a href='?page_no=1'>First Page</a></li>";
+                            } ?>
+    
+                            <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
+                            <a <?php if($page_no > 1){
+                            echo "href='?page_no=$previous_page'";
+                            } ?>>Previous</a>
+                            </li>
+                                
+                            <li <?php if($page_no >= $total_no_of_pages){
+                            echo "class='disabled'";
+                            } ?>>
+                            <a <?php if($page_no < $total_no_of_pages) {
+                            echo "href='?page_no=$next_page&bcode=$branch&submit'";
+                            } ?>>Next</a>
+                            </li>
+                            
+                            <?php if($page_no < $total_no_of_pages){
+                            echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
+                            } ?>
+                          </ul>
             </div>  
 
 

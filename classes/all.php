@@ -2163,8 +2163,16 @@
                 if($goroll){
                     $rollcount = mysqli_num_rows($goroll);
                 }
+                
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
+                }elseif(isset($_GET['bcode']) && $_GET['bcode'] == $code){
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
+                }else{ 
                 echo "<option value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
             }
+              
+        }
 
             }
 
