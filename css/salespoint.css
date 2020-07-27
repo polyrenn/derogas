@@ -8,9 +8,24 @@
 .crb-queue-no {
   margin-right: 1em;
 }
+  
+.crb-list {
+  display: flex;
+  flex-flow: row-reverse;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1em;
+}
+
+.crb-queue-no {
+  margin-right: 1em;
+}
 
 table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 .table {
