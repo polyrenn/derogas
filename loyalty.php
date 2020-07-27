@@ -417,12 +417,12 @@ Sales
                           </table>
                           <ul class="pagination">
                             <?php if($page_no > 1){
-                            echo "<li><a href='?page_no=1'>First Page</a></li>";
+                            echo "<li><a href='?page_no=1&bcode=$branch&submit'>First Page</a></li>";
                             } ?>
     
                             <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
                             <a <?php if($page_no > 1){
-                            echo "href='?page_no=$previous_page'";
+                            echo "href='?page_no=$previous_page&bcode=$branch&submit'";
                             } ?>>Previous</a>
                             </li>
                                 
@@ -435,7 +435,7 @@ Sales
                             </li>
                             
                             <?php if($page_no < $total_no_of_pages){
-                            echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
+                            echo "<li><a href='?page_no=$total_no_of_pages&bcode=$branch&submit'>Last &rsaquo;&rsaquo;</a></li>";
                             } ?>
                           </ul>
             </div>  
