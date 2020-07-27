@@ -1,7 +1,12 @@
   <?php
 
   session_start();
-
+  $seconds_to_cache = 3;
+  $ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
+  header("Expires: $ts");
+  header("Pragma: cache");
+  header("Cache-Control: max-age=$seconds_to_cache");
+  
 
   require_once ('classes/all.php');
   $id = $_SESSION['id'];
@@ -19,14 +24,14 @@
           $color = "bg-gradient-primary";
           $link = "adminPage.php";
       }
-
-
+   
   if(isset($_POST['val'])){
       $branchCode = $_POST['val'];
   }else{
-      $branchCode = $_POST['gotobranch'];
+      $branchCode = $_GET['branch'];
       
   }
+  
 
   $getName = "SELECT company.CompanyName, gasStations.Bname,gasStations.BtankUse, gasStations.BtankA, gasStations.BtankB, gasStations.Bcode FROM gasStations, company WHERE company.CompanyCode = gasStations.company AND gasStations.Bcode = '$branchCode' ";
   $get = mysqli_query($connect, $getName);
@@ -47,10 +52,10 @@
   }
 
 
-  if(isset($_POST['val'])){
+  if(isset($_POST['date'])){
       $ddaattee = $_POST['date'];
       $date = $_POST['date'];
-      $branchCode = $_POST['val'];
+      $branchCode = $_GET['branch'];
       $getName = "SELECT company.CompanyName, gasStations.Bname, gasStations.Bcode FROM gasStations, company WHERE company.CompanyCode = gasStations.company AND gasStations.Bcode = '$branchCode' ";
   $get = mysqli_query($connect, $getName);
 
@@ -133,6 +138,8 @@ $Offline = "SELECT  SUM(finalTotal), SUM(cash), SUM(kg), SUM(changeD) FROM final
           $opf = mysqli_query($connect, $op);
 
   }
+  print_r($_GET);
+  print_r($_POST);
 
 
   ?>
@@ -431,7 +438,7 @@ overflow-y: hidden;
         
         if($tUse == 'Tank A'){
             
-            if(isset($_POST['val'])){
+            if(isset($_POST['date'])){
                 $date = $ddaattee;
             }else{
                 $date = $date;
@@ -519,7 +526,7 @@ overflow-y: hidden;
             ";
         }elseif($tUse == 'Tank B'){
             
-            if(isset($_POST['val'])){
+            if(isset($_POST['date'])){
                 $date = $ddaattee;
             }else{
                 $date = $date;
@@ -607,35 +614,42 @@ overflow-y: hidden;
             ";
         }
     }else{
-        
+        echo "alt";
         $gt = "SELECT * FROM gasStations WHERE BtankUse = '$tank'";
         $gg = mysqli_query($connect, $gt);
         $gow = mysqli_fetch_array($gg);
         $tUse = $gow['BtankUse'];
-        
-        if(isset($_POST['val'])){
+        $altdate = $_POST['date'];
+        echo $altdate;
+        if(isset($_POST['date'])){
             $date = $ddaattee;
         }else{
             $date = $date;
         }
         
-        $gf = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
+        $gettank = "SELECT tankUse FROM finalsales WHERE branch = '$branchCode' AND datee = '$altdate' ORDER BY id DESC LIMIT 1";
+        $gtquery = mysqli_query($connect, $gettank);
+        $gtw = mysqli_fetch_array($gtquery);
+        $tUse = $gtw['tankUse'];
+        echo $tUse;
+        
+        $gf = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$altdate' ORDER BY id DESC LIMIT 1";
         
         $ggf = mysqli_query($connect, $gf);
         $tow = mysqli_fetch_array($ggf);
         $bstock = $tow['balancee'];
         
-        $gffz = "SELECT SUM(kg) FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
+        $gffz = "SELECT SUM(kg) FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$altdate' ORDER BY id DESC LIMIT 1";
         $ggffz = mysqli_query($connect, $gffz);
         $towfz = mysqli_fetch_array($ggffz);
         $soldk = $towfz['SUM(kg)'];
         
-        $ku = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$date' ORDER BY id ASC LIMIT 1";
+        $ku = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$altdate' ORDER BY id ASC LIMIT 1";
         $uu = mysqli_query($connect, $ku);
         $samp = mysqli_fetch_array($uu);
         $opening = $samp['opening'];
         
-        $sc = "SELECT * FROM finalsales WHERE datee = '$date' AND branch = '$branchCode' AND category != 'Switchcontroler' ";
+        $sc = "SELECT * FROM finalsales WHERE datee = '$altdate' AND branch = '$branchCode' AND category != 'Switchcontroler' ";
         $ss = mysqli_query($connect, $sc);
         $fcc = mysqli_num_rows($ss);
         
@@ -680,12 +694,26 @@ overflow-y: hidden;
             
             <div class="container-fluid">
                 <div class="container-fluid mb-2">
-                  <form action="  " method="POST">
+                <script>
+                        function ff() {
+                            document.getElementById('pull-records').submit();
+                        }
+                        </script>
+                  <form id="pull-records" action="  " method="POST">
                       <div class="row">
+                      <?php
+                      $datepost = $_POST['date']; 
+                    if(isset($_POST['date'])) {
+                        echo "<input type='date' value='$datepost' onchange='ff()' name='date' class='form-control col-lg-10 mr-1 mb-2' placeholder='Select date to view'>";
+                    }else{
+                        echo "<input type='date' onchange='ff()' name='date' class='form-control col-sm-10 mr-1 mb-2' placeholder='Select date to view'>";
+                    }
+                
+                      ?>
                   
-                          <input type="date" name="date" class="form-control col-lg-10 mr-1 mb-2" placeholder="Select date to view">
                           
-                              <button type="submit" name="val" value="<?php echo $branchCode; ?>" class="col btn btn-outline-success">Pull Records</button>
+                          
+                  
                       </div>
             <h5 align='center' class='mt-2 mb-2 '><a class='text-danger' href='<?php echo $link ?>'><b> Goto Home Page</b></a></h5>
              <h5 align='center' class='mt-2 mb-2'><a href='salesanalysis.php'><b> Goto Sales Summary page </b></a></h5>
