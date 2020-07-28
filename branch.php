@@ -415,7 +415,7 @@ overflow-y: hidden;
                <h3  align='center'>Sales Analysis For <span class="text-danger" ><?php echo $company ?> : <?php echo $branch ?> : <?php echo $date ?></span></h3>
 
 <?php
-    $date = date('Y-m-d', strtotime('now'));
+    $date = $_POST['date'];
     //check switch log
     $sw = "SELECT * FROM switchLog WHERE datee = '$date' AND branch = '$branchCode' ORDER BY id DESC LIMIT 1";
     $swt = mysqli_query($connect, $sw);
