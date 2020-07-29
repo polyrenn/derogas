@@ -1751,7 +1751,8 @@
         //get crb number
         public function nextCrb(){
             $branchCode = $_SESSION['Bcode'];
-            $sql = "SELECT     crbnumber FROM crbs WHERE branch = '$branchCode' ORDER BY id DESC LIMIT 1";
+            $datenow = date('Y-m-d', strtotime('now'));
+            $sql = "SELECT     crbnumber FROM crbs WHERE branch = '$branchCode' AND datee = '$datenow' ORDER BY id DESC LIMIT 1";
             $run = mysqli_query($this->con , $sql);
             
             if(mysqli_num_rows($run) > 0){
