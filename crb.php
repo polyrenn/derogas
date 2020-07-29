@@ -4,7 +4,7 @@
     $do = new All($connect);
 
     $branch = $_POST['branch'];
-    $lets = "SELECT id, crbnumber FROM crbs WHERE branch = '$branch' ORDER BY id ASC LIMIT 1";
+    $lets = "SELECT id, crbnumber FROM crbs WHERE branch = '$branch' ORDER BY id DESC LIMIT 1";
     $get = mysqli_query($connect, $lets);
     $getData = $_POST['fi'];
     $fetch = preg_split("/\,/", $getData);
