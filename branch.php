@@ -755,7 +755,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' ";
+                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
@@ -790,7 +790,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' ";
+                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
@@ -825,7 +825,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' ";
+                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
@@ -860,7 +860,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' ";
+                                        $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
