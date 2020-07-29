@@ -2,7 +2,7 @@
 
     require_once('classes/all.php');
     $do = new All($connect);
-    $datenow = date('Y-m-d', strtotime('now'));
+
     $branch = $_POST['branch'];
     $lets = "SELECT id, crbnumber FROM crbs WHERE branch = '$branch' ORDER BY id DESC LIMIT 1";
     $get = mysqli_query($connect, $lets);
