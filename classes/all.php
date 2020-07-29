@@ -1752,7 +1752,7 @@
         public function nextCrb(){
             $branchCode = $_SESSION['Bcode'];
             $datenow = date('Y-m-d', strtotime('now'));
-            $sql = "SELECT     crbnumber FROM crbs WHERE branch = '$branchCode' AND datee = '$datenow' ORDER BY id DESC LIMIT 1";
+            $sql = "SELECT     crbnumber FROM crbs WHERE branch = '$branchCode' AND datee = '$datenow' AND category NOT REGEXP '^Offline' ORDER BY id DESC LIMIT 1";
             $run = mysqli_query($this->con , $sql);
             
             if(mysqli_num_rows($run) > 0){
