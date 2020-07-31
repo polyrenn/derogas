@@ -26,7 +26,7 @@ $page_no = $_GET['page_no'];
     $page_no = 1;
   }
 
-$total_records_per_page = 10;    
+$total_records_per_page = 20;    
 // Pagination Variables
 $offset = ($page_no-1) * $total_records_per_page;
 $previous_page = $page_no - 1;
@@ -39,10 +39,10 @@ $total_records = mysqli_fetch_array($result_count);
 $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1;
-echo $total_no_of_pages;
+//echo $total_no_of_pages;
 $branch_get = $_GET['bcode'];
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit']) || isset($_POST['bcode'])){
     $branch = $_POST['bcode'];
 
     $sql = "SELECT * FROM customers WHERE branch = '$branch' ORDER BY CpurchaseCount DESC LIMIT $offset, $total_records_per_page";
@@ -51,8 +51,12 @@ $gosql = mysqli_query($connect, $sql);
     $sql = "SELECT * FROM customers WHERE branch = '$branch_get' ORDER BY CpurchaseCount DESC LIMIT $offset, $total_records_per_page";
     $gosql = mysqli_query($connect, $sql);
 }
-print_r($_GET);
-print_r($_POST);
+
+if(isset($_GET['submit'])) {
+  $branch = $branch_get;
+}
+//print_r($_GET);
+//print_r($_POST);
 
 ?>
 
@@ -305,16 +309,21 @@ Sales
           <div class="row">
           
           <div class="col-lg-10 form-group">
-
-            <form action=" " method="POST" >
+          <script>
+                        function doChange() {
+                          let form = document.getElementById('pull-records');
+                          form.submit();
+                        }
+                        </script>
+            <form action=" " method="POST" id="pull-records" >
                 
-            <select class="form-control" name="bcode">
+            <select onchange="doChange();" class="form-control" name="bcode">
               <option>Select Branch</option>
             <?php  echo $createStation->cusStats();?>
             </select>
             </div>
 
-            <button type="submit" name="submit" class="form-control col-lg-2 btn btn-success">View loyalty</button>
+           <!-- <button type="submit" name="btnsubmit" class="form-control col-lg-2 btn btn-success">View loyalty</button> -->
 
             </form>
 
@@ -415,7 +424,17 @@ Sales
                         ?>
                     </tbody>
                         </table>
+                        <!--
                         <ul class="pagination">
+                          <style>
+                            .pagination {
+                              justify-content: center;
+                            }
+                            .pagination li {
+                              margin: 1.5rem;
+                              font-size: 1.2rem;
+                            }
+                          </style>
                           <?php if($page_no > 1){
                           echo "<li><a href='?page_no=1&bcode=$branch&submit'>First Page</a></li>";
                           } ?>
@@ -438,6 +457,7 @@ Sales
                           echo "<li><a href='?page_no=$total_no_of_pages&bcode=$branch&submit'>Last &rsaquo;&rsaquo;</a></li>";
                           } ?>
                         </ul>
+                        -->
           </div>  
 
 
