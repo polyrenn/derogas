@@ -138,8 +138,8 @@ $Offline = "SELECT  SUM(finalTotal), SUM(cash), SUM(kg), SUM(changeD) FROM final
           $opf = mysqli_query($connect, $op);
 
   }
-  print_r($_GET);
-  print_r($_POST);
+  //print_r($_GET);
+  //print_r($_POST);
 
 
   ?>
@@ -614,13 +614,13 @@ overflow-y: hidden;
             ";
         }
     }else{
-        echo "alt";
+        //echo "alt";
         $gt = "SELECT * FROM gasStations WHERE BtankUse = '$tank'";
         $gg = mysqli_query($connect, $gt);
         $gow = mysqli_fetch_array($gg);
         $tUse = $gow['BtankUse'];
         $altdate = $_POST['date'];
-        echo $altdate;
+        //echo $altdate;
         if(isset($_POST['date'])){
             $date = $ddaattee;
         }else{
