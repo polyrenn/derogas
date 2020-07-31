@@ -631,7 +631,7 @@ overflow-y: hidden;
         $gtquery = mysqli_query($connect, $gettank);
         $gtw = mysqli_fetch_array($gtquery);
         $tUse = $gtw['tankUse'];
-        echo $tUse;
+        //echo $tUse;
         
         $gf = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$altdate' ORDER BY id DESC LIMIT 1";
         
