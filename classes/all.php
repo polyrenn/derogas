@@ -78,7 +78,11 @@
                 $name = $row['Bname'];
                 
                 
-                echo "<option value=".$code.">".$com." : ".$name."</option>";
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo "<option value=".$code.">".$com." : ".$name."</option>";
+                }
             }
             }else{
                 $company = $_SESSION['CompanyName'];
@@ -90,8 +94,12 @@
                 $code = $row['Bcode'];
                 $name = $row['Bname'];
                 
-                
-                echo "<option value=".$code.">".$com." : ".$name."</option>";
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo "<option value=".$code.">".$com." : ".$name."</option>";
+                }
+               
             }
             }
 
