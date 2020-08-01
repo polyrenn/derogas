@@ -280,7 +280,7 @@
                                               <div class="col-12 col-lg-6">
 <div >
 <h3  align='center'>Viewing Reciept Number:  <span class="text-danger" ><?php echo $reciept ?></span> </h3>
-<form action='branch.php' method='POST'>
+<form action='branch.php?date=&branch=<?php echo "$branchCode"?>' method='POST'>
 <button align='center' class='col-12 col-lg-6 btn btn-outline-info mt-2 mb-3' name='gotobranch' value='<?php echo $branchCode ?>'>Go back to sales log</button>
 </form>
 
