@@ -619,7 +619,12 @@ overflow-y: hidden;
         $gg = mysqli_query($connect, $gt);
         $gow = mysqli_fetch_array($gg);
         $tUse = $gow['BtankUse'];
-        $altdate = $_POST['date'];
+        if($_POST['date'] == '') {
+          $altdate = date('Y-m-d', strtotime('now'));
+        }else{
+          $altdate = $_POST['date'];
+        }
+       
         //echo $altdate;
         if(isset($_POST['date'])){
             $date = $ddaattee;
