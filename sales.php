@@ -4,7 +4,7 @@
   $branch = $_POST['branch'];
 
 
-  $crbN = "SELECT crbnumber FROM crbstep WHERE branch = '$branch' ORDER BY id DESC";
+  $crbN = "SELECT crbnumber FROM crbstep WHERE branch = '$branch' ORDER BY id DESC LIMIT 1";
   $rogue = mysqli_query($connect, $crbN);
 
           while($ggg = mysqli_fetch_array($rogue)){
