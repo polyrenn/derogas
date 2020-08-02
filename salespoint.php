@@ -716,7 +716,7 @@
     $newChange = $changedebit - $get;
 
 
-    $cha = "UPDATE customers SET Cchange = '$newChange' ";
+    $cha = "UPDATE customers SET Cchange = '$newChange' WHERE Cphone = '$phone' AND branch = '$branchCode' ";
     $c = mysqli_query($connect, $cha);
 
    
