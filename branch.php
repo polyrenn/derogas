@@ -1196,7 +1196,7 @@ overflow-y: hidden;
 //
 //
                                         
-                                        $klz = "SELECT SUM(amount), SUM(finalTotal), SUM(kg) FROM finalsales WHERE tankUse = '$tank' AND datee = '$date' AND branch = '$branchCode' AND balancee > '$loss' AND id != '$id' ";
+                                        $klz = "SELECT SUM(amount), SUM(finalTotal), SUM(kg) FROM finalsales WHERE tankUse = '$tank' AND datee = '$date' AND branch = '$branchCode'";
                                         $kz = mysqli_query($connect, $klz);
                                         $ghz = mysqli_fetch_array($kz);
                                         $kaz = $ghz['SUM(amount)'];
@@ -1206,7 +1206,7 @@ overflow-y: hidden;
                                         
                                         
             
-                                        $off = "SELECT SUM(amount), SUM(finalTotal), SUM(kg) FROM finalsales WHERE tankUse = '$tank'AND datee = '$date' AND branch = '$branchCode' AND category LIKE '%Offline%' ";
+                                        $off = "SELECT SUM(amount), SUM(finalTotal), SUM(kg) FROM finalsales WHERE tankUse = '$tank' AND datee = '$date' AND branch = '$branchCode' AND category LIKE '%Offline%' ";
                                         $offgo = mysqli_query($connect, $off);
                                         $o = mysqli_fetch_array($offgo);
                                         $oAm = $o['SUM(amount)'];
@@ -1224,7 +1224,7 @@ overflow-y: hidden;
                                         <td colspan='2' align='right'><b>".$time."</b></td>
                                         </tr>
                                         
-                                        ";
+                                        "; echo $tankk;
                           echo "
                           <tr>
                           <td colspan='12' align='center'><span class='text-danger'><b>Day's Summary</b></td>
