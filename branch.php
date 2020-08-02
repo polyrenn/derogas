@@ -1224,7 +1224,7 @@ overflow-y: hidden;
                                         <td colspan='2' align='right'><b>".$time."</b></td>
                                         </tr>
                                         
-                                        "; echo $tankk;
+                                        ";
                           echo "
                           <tr>
                           <td colspan='12' align='center'><span class='text-danger'><b>Day's Summary</b></td>
