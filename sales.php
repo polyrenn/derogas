@@ -11,11 +11,19 @@
               $crbNUn = $ggg['crbnumber'];
           }
 
-          $ga = "INSERT INTO crbs 
-          SELECT * FROM crbstep WHERE crbnumber ='$crbNUn' ";
+         /* $ga = "INSERT INTO crbs 
+          SELECT * FROM crbstep WHERE crbnumber ='$crbNUn' "; */
+          $ga = "INSERT INTO crbs (crbnumber, datee, timee, branch, customer, phone, category, kg, quantity, tquant,
+          amount, amount2) 
+          SELECT  crbnumber, datee, timee, branch, customer, phone, category, kg, quantity, tquant,
+          amount, amount2 FROM crbstep WHERE crbnumber ='$crbNUn' ";
           $fl = mysqli_query($connect, $ga);
+         
         
-    $game = "INSERT INTO salespoint SELECT * FROM crbstep WHERE crbnumber ='$crbNUn' AND branch = '$branch' ";
+    $game = "INSERT INTO salespoint (crbnumber, datee, timee, branch, customer, phone, category, kg, quantity, tquant,
+    amount, amount2)  
+    SELECT crbnumber, datee, timee, branch, customer, phone, category, kg, quantity, tquant,
+          amount, amount2 FROM crbstep WHERE crbnumber ='$crbNUn' AND branch = '$branch' ";
     $flash = mysqli_query($connect, $game);
 
     $runT = "DELETE FROM crbstep WHERE crbnumber = '$crbNUn' ";
