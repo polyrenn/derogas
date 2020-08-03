@@ -2,7 +2,7 @@
     
     error_reporting (E_ALL ^ E_NOTICE);
     
-  $connect = mysqli_connect('localhost', 'root', 'aicogas', 'solex');
+  $connect = mysqli_connect('localhost', 'root', 'YES', 'solex');
     
     // if(!$connect){
     
@@ -78,7 +78,11 @@
                 $name = $row['Bname'];
                 
                 
-                echo "<option value=".$code.">".$com." : ".$name."</option>";
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo "<option value=".$code.">".$com." : ".$name."</option>";
+                }
             }
             }else{
                 $company = $_SESSION['CompanyName'];
@@ -90,8 +94,12 @@
                 $code = $row['Bcode'];
                 $name = $row['Bname'];
                 
-                
-                echo "<option value=".$code.">".$com." : ".$name."</option>";
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo "<option value=".$code.">".$com." : ".$name."</option>";
+                }
+               
             }
             }
 
@@ -1930,10 +1938,10 @@
                     $branch = $row['Bname'];
                     $company = $row['CompanyName'];
                     $branchCode = $row['Bcode'];
-                    
+                    $date = $_POST['date'];
                     
                     echo " <th scope='col'>".$company."<br>".$branch."<br>
-                    <form action='branch.php' method='POST'>
+                    <form action='branch.php?date=$date&branch=$branchCode' method='POST'>
                     <button class='btn btn-outline-info' name='gotobranch' value='".$branchCode."'>Goto sales log</button>
                     </form>
                     </th>";
@@ -1950,10 +1958,11 @@
                     $branch = $row['Bname'];
                     $company = $row['CompanyName'];
                     $branchCode = $row['Bcode'];
+                    $date = $_POST['date'];
                     
                     
                     echo " <th scope='col'>".$company."<br>".$branch."<br>
-                    <form action='branch.php' method='POST'>
+                    <form action='branch.php?date=$date&branch=$branchCode' method='POST'>
                     <button class='btn btn-outline-info' name='gotobranch' value='".$branchCode."'>Goto sales log</button>
                     </form>
                     </th>";
@@ -2088,7 +2097,32 @@
                 return $encode;
             }
             
+        }  
+
+        public function getCustomerDetailsL(){
+            $branchCode = $_POST['bcode'];
+            $cus = "SELECT * FROM customers WHERE branch = '$branchCode' ";
+            $gocus = mysqli_query($this->con , $cus);
+            if($gocus){
+                $data = [];
+                while($row = mysqli_fetch_array($gocus)){
+                    $na = $row['Cname'];
+                    $cphone = $row['Cphone'];
+                    $cid = $row['Cid'];
+                    
+                    //write a part to ret
+                    
+                    $getData = $cphone." , " .$na. " , " .$cid. "";
+                    $data[] = $getData;
+                    $encode = json_encode($data);
+                    
+                    
+                }
+                return $encode;
+            }
+            
         }
+
         //populate table head with kgs
         public function tableHeadkg(){
             $sql = "SELECT DISTINCT(cylinderSize) FROM price WHERE cylinderSize != 'Others' ";
@@ -2164,8 +2198,16 @@
                 if($goroll){
                     $rollcount = mysqli_num_rows($goroll);
                 }
+                
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
+                }elseif(isset($_GET['branch']) && $_GET['branch'] == $code){
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
+                }else{ 
                 echo "<option value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
             }
+              
+        }
 
             }
 

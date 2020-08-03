@@ -8,7 +8,7 @@
 .crb-queue-no {
   margin-right: 1em;
 }
-
+  
 .crb-list {
   display: flex;
   flex-flow: row-reverse;
@@ -49,5 +49,3 @@ td {
 .receipt-t {
   border: 2px solid #333333;
 }
-
-    

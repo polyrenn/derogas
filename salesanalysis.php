@@ -1,7 +1,12 @@
   <?php
 
   session_start();
-
+  $seconds_to_cache = 3;
+  $ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
+  header("Expires: $ts");
+  header("Pragma: cache");
+  header("Cache-Control: max-age=$seconds_to_cache");
+    
 
   require_once ('classes/all.php');
   $id = $_SESSION['id'];
@@ -297,6 +302,8 @@
   }
       }
 
+    //  print_r($_GET);
+   // print_r($_POST);
   
 
   ?>
@@ -319,6 +326,7 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 <!-- Custom styles for this template-->
+<link rel="stylesheet" href="css/salesanalysis.css">
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 <style>
@@ -557,12 +565,24 @@ Logout
             <h5 align='center'><a href='<?php echo $link ?>'><b> Click to return to home page </b></a></h5>
             <div class="container-fluid">
                 <div class="container-fluid mb-2">
-                <form action="  " method="POST">
+                    <script>
+                        function ff() {
+                            document.getElementById('pull-records').submit();
+                        }
+                        </script>
+                <form id="pull-records" action="salesanalysis.php?date=" method="POST">
                 <div class="row">
-          
-                <input type="date" name="date" class="form-control col-sm-10 mr-1 mb-2" placeholder="Select date to view">
+                <?php 
+                    if(isset($_POST['date'])) {
+                        echo "<input onchange='ff()' type='date' value='$date' name='date' class='form-control col-sm-10 mr-1 mb-2' placeholder='Select date to view'>";
+                    }else{
+                        echo "<input type='date' onchange='ff()' name='date' class='form-control col-sm-10 mr-1 mb-2' placeholder='Select date to view'>";
+                    }
+                
+                ?>
+               
               
-                  <button type="submit" class="col btn btn-outline-success">Pull Records</button>
+               <!-- <button name="submit" type="submit" class="col btn btn-outline-success">Pull Records</button> -->
                 </div>
                   
                   </form>

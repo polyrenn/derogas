@@ -22,7 +22,7 @@
           $color = "bg-gradient-primary";
           $link = "adminPage.php";
       }
-  if(isset($_POST['submit'])){
+  if(isset($_POST['submit']) || isset($_POST['bcode'])){
       $code = $_POST['bcode'];
   }
       
@@ -308,16 +308,20 @@ overflow-y: hidden;
                   <div class="row">
 
               <div class="col-lg-10 form-group">
-
-              <form action=" " method="POST" >
+              <script>
+                        function ff() {
+                            document.getElementById('pull-stock').submit();
+                        }
+                        </script>
+              <form id="pull-stock" action=" " method="POST" >
                   
-              <select class="form-control" name="bcode">
+              <select onchange="ff()" class="form-control" name="bcode">
               <option>Select Branch </option>
               <?php  echo $createStation->getCompanyBranchCode();?>
               </select>
               </div>
               
-              <button type="submit" name="submit" class="form-control col-lg-2 btn btn-success">View Stock Details</button>
+             <!-- <button type="submit" name="btnsubmit" class="form-control col-lg-2 btn btn-success">View Stock Details</button> -->
 
               </form>
 

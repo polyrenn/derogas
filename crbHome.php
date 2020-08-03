@@ -2821,7 +2821,8 @@ function printContent(el){
     },
     {
     name: 'states',
-    source: substringMatcher(states)
+    source: substringMatcher(states),
+    limit: 13
     });
 
 
