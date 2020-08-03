@@ -409,7 +409,7 @@ Sales
                 {
                 name: 'states',
                 source: substringMatcher(states),
-                limit: 10
+                limit: 15
                 });
               </script>    
           
