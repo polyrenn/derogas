@@ -40,7 +40,7 @@ $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1;
 //echo $total_no_of_pages;
-$branch_get = $_GET['bcode'];
+$branch_get = $_GET['branch'];
 
 if(isset($_POST['submit']) || isset($_POST['bcode'])){
     $branch = $_POST['bcode'];
@@ -51,6 +51,16 @@ $gosql = mysqli_query($connect, $sql);
     $sql = "SELECT * FROM customers WHERE branch = '$branch_get' ORDER BY CpurchaseCount DESC LIMIT $offset, $total_records_per_page";
     $gosql = mysqli_query($connect, $sql);
 }
+
+$getData = $_POST['fi'];
+$fetch = preg_split("/\,/", $getData);
+
+if(isset($_GET['q']) && !isset($_POST['bcode'])) {
+  $sql = "SELECT * FROM customers WHERE branch = '$branch_get' and Cphone = '$fetch[0]' ORDER BY CpurchaseCount DESC LIMIT $offset, $total_records_per_page";
+  $gosql = mysqli_query($connect, $sql);
+}
+
+
 
 if(isset($_GET['submit'])) {
   $branch = $branch_get;
@@ -77,8 +87,82 @@ if(isset($_GET['submit'])) {
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src="my.js"></script>
+<script src="loyalty.js"></script>
 <!-- Custom styles for this template-->
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
+<style>
+
+@media print {
+    body , h1, h2, h3, h4, h5, h6,td,small{
+        
+        margin-top:0px;
+        padding-top:0px;
+        margin-bottom:0px;
+        padding-bottom:0px;
+ 
+    color: black; 
+    font-size:1.2em;
+        
+    }
+}
+
+    .tt-query, /* UPDATE: newer versions use tt-input instead of tt-query */
+    .tt-hint {
+        width: 396px;
+        height: 30px;
+        padding: 8px 12px;
+        font-size: 24px;
+        line-height: 30px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .tt-query { /* UPDATE: newer versions use tt-input instead of tt-query */
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    }
+
+    .tt-hint {
+        color: #999;
+    }
+
+    .tt-input {
+      width: 350px;
+    }
+
+    .tt-menu { /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
+        width: 422px;
+        margin-top: 12px;
+        padding: 8px 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+
+    .tt-suggestion {
+        padding: 3px 20px;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .tt-suggestion.tt-is-under-cursor { /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
+        color: #fff;
+        background-color: #0097cf;
+
+    }
+
+    .tt-suggestion p {
+        margin: 0;
+    }
+    </style>
 
 </head>
 
@@ -307,6 +391,27 @@ Sales
           </div>
 
           <div class="row">
+          <div class="search-form form-group col-lg-5">
+            <form action="loyalty.php?q&branch=<?php echo $branch ?>" method="post">
+            <input class="form-control mb-1 mt-1 search" type="text" name="fi" placeholder="Search by Phone, Name or ID">
+            <button type="submit" name="crb" class="btn btn-outline-success" data-toggle="modal" data-target="#crb" >Search</button>
+            </form>
+          </div>
+          <script>
+
+                var states = <?= $createStation->getCustomerDetailsL(); ?>;
+
+                $('.search').typeahead({
+                hint: false,
+                highlight: true,
+                minLength: 1
+                },
+                {
+                name: 'states',
+                source: substringMatcher(states),
+                limit: 10
+                });
+              </script>    
           
           <div class="col-lg-10 form-group">
           <script>
@@ -478,7 +583,8 @@ Sales
             </div>
           </div>
         </div>
-      
+        
+     
     
 
       <!-- Footer -->

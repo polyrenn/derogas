@@ -2096,7 +2096,32 @@
                 return $encode;
             }
             
+        }  
+
+        public function getCustomerDetailsL(){
+            $branchCode = $_POST['bcode'];
+            $cus = "SELECT * FROM customers WHERE branch = '$branchCode' ";
+            $gocus = mysqli_query($this->con , $cus);
+            if($gocus){
+                $data = [];
+                while($row = mysqli_fetch_array($gocus)){
+                    $na = $row['Cname'];
+                    $cphone = $row['Cphone'];
+                    $cid = $row['Cid'];
+                    
+                    //write a part to ret
+                    
+                    $getData = $cphone." , " .$na. " , " .$cid. "";
+                    $data[] = $getData;
+                    $encode = json_encode($data);
+                    
+                    
+                }
+                return $encode;
+            }
+            
         }
+
         //populate table head with kgs
         public function tableHeadkg(){
             $sql = "SELECT DISTINCT(cylinderSize) FROM price WHERE cylinderSize != 'Others' ";
@@ -2175,7 +2200,7 @@
                 
                 if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
                     echo "<option selected='selected' value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
-                }elseif(isset($_GET['bcode']) && $_GET['bcode'] == $code){
+                }elseif(isset($_GET['branch']) && $_GET['branch'] == $code){
                     echo "<option selected='selected' value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
                 }else{ 
                 echo "<option value=".$code.">".$com." : ".$name." - ".$code. " : ".$rollcount." Members</option>";
