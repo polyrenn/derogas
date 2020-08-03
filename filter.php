@@ -1,13 +1,13 @@
     <?php 
-
+    session_start();
     require_once ("classes/all.php");
         
-       
+        $bc = $_SESSION['Bcode'];
         $lee = $_POST['reciept'];
        
         
         //get all data from stepfinal
-        $ga = "SELECT * FROM stepfinal WHERE reciept ='$lee' ";
+        $ga = "SELECT * FROM stepfinal WHERE reciept ='$lee' AND branch = '$bc' ";
         $fl = mysqli_query($connect, $ga);
         $row = mysqli_fetch_array($fl);
         
@@ -36,7 +36,7 @@
         VALUES('$branchCode', '$reciept', '$date', '$time', '$customer', '$category', '$phone', '$payment', '$amm', '$kggg','$q','$ammm', '$status', '$changee', '$changeD', '$finalamount', '$tank','$openTank', '$remain', '$remained')";
         $rod = mysqli_query($connect, $finalsales);
         
-        $squee = "SELECT * FROM stepcomplete WHERE reciept = '$lee' ";
+        $squee = "SELECT * FROM stepcomplete WHERE reciept = '$lee' AND branch = '$bc' ";
         $gosqu = mysqli_query($connect, $squee);
         while($gap = mysqli_fetch_array($gosqu)){
             $branch = $gap['branch'];
@@ -60,18 +60,18 @@
         }
         
         
-        $ro = "DELETE FROM stepcomplete WHERE reciept = '$lee'";
+        $ro = "DELETE FROM stepcomplete WHERE reciept = '$lee' AND branch = '$bc' ";
         $fla = mysqli_query($connect, $ro);
         
-        $r = "DELETE FROM stepfinal WHERE reciept = '$lee' ";
+        $r = "DELETE FROM stepfinal WHERE reciept = '$lee' AND branch = '$bc' ";
         $flas = mysqli_query($connect, $r);
         
         
         
-        $rock = "DELETE FROM salespoint WHERE crbnumber = '$lee'";
+        $rock = "DELETE FROM salespoint WHERE crbnumber = '$lee' AND branch = '$bc' ";
         $flash = mysqli_query($connect, $rock);
         
-        $do = "INSERT INTO doneCrb SELECT * FROM salespoint WHERE crbnumber = '$lee'";
+        $do = "INSERT INTO doneCrb SELECT * FROM salespoint WHERE crbnumber = '$lee' AND branch = '$bc' ";
         $flas = mysqli_query($connect, $do);
         
         if($flash){
