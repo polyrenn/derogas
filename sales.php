@@ -26,7 +26,7 @@
           amount, amount2 FROM crbstep WHERE crbnumber ='$crbNUn' AND branch = '$branch' ";
     $flash = mysqli_query($connect, $game);
 
-    $runT = "DELETE FROM crbstep WHERE crbnumber = '$crbNUn' ";
+    $runT = "DELETE FROM crbstep WHERE crbnumber = '$crbNUn' AND branch = '$branch' ";
     $rra = mysqli_query($connect, $runT);
 
 
