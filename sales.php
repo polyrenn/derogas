@@ -16,7 +16,7 @@
           $ga = "INSERT INTO crbs (crbnumber, datee, timee, branch, customer, phone, category, kg, quantity, tquant,
           amount, amount2) 
           SELECT  crbnumber, datee, timee, branch, customer, phone, category, kg, quantity, tquant,
-          amount, amount2 FROM crbstep WHERE crbnumber ='$crbNUn' ";
+          amount, amount2 FROM crbstep WHERE crbnumber = '$crbNUn' AND branch = '$branch' ";
           $fl = mysqli_query($connect, $ga);
          
         
