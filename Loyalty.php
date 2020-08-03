@@ -297,7 +297,7 @@ Sales
           </li>
 
           <li class="nav-item">
-              <a class="nav-link collapsed" href="loyalty.php">
+              <a class="nav-link collapsed" href="Loyalty.php">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Loyalty Gift Tool </span>
               </a>
@@ -392,7 +392,7 @@ Sales
 
           <div class="row">
           <div class="search-form form-group col-lg-5">
-            <form action="loyalty.php?q&branch=<?php echo $branch ?>" method="post">
+            <form action="Loyalty.php?q&branch=<?php echo $branch ?>" method="post">
             <input class="form-control mb-1 mt-1 search" type="text" name="fi" placeholder="Search by Phone, Name or ID">
             <button type="submit" name="crb" class="btn btn-outline-success" data-toggle="modal" data-target="#crb" >Search</button>
             </form>
