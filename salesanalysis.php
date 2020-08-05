@@ -571,12 +571,12 @@ Logout
                         }
                         </script>
                 <form id="pull-records" action="salesanalysis.php?date=" method="POST">
-                <div class="row">
+                <div style="justify-content: center" class="row">
                 <?php 
                     if(isset($_POST['date'])) {
-                        echo "<input onchange='ff()' type='date' value='$date' name='date' class='form-control col-sm-10 mr-1 mb-2' placeholder='Select date to view'>";
+                        echo "<input onchange='ff()' type='date' value='$date' name='date' class='form-control col-sm-5 mr-1 mb-2' placeholder='Select date to view'>";
                     }else{
-                        echo "<input type='date' onchange='ff()' name='date' class='form-control col-sm-10 mr-1 mb-2' placeholder='Select date to view'>";
+                        echo "<input type='date' onchange='ff()' name='date' class='form-control col-sm-5 mr-1 mb-2' placeholder='Select date to view'>";
                     }
                 
                 ?>
