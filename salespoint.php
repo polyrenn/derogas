@@ -1881,7 +1881,7 @@
                                 echo "<b class=''>".number_format($oth)." Sales today</b><br>";
                                 echo "<hr>";
                                 echo "<b class=''>Total Kg </b><br>";
-                                echo "<b class=''> ".$soldka." Kg</b><br>";
+                                echo "<b class=''> ".$soldk." Kg</b><br>";
                                 echo "<hr>";
                                 echo "<b class=''> Amount</b><br>";
                                 echo "<b class=''> ".number_format($alkga)." NGN</b>";
