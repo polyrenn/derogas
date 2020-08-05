@@ -710,13 +710,13 @@ overflow-y: hidden;
                         }
                         </script>
                   <form id="pull-records" action="  " method="POST">
-                      <div class="row">
+                      <div style="justify-content: center" class="row">
                       <?php
                       $datepost = $_POST['date']; 
                     if(isset($_POST['date'])) {
-                        echo "<input type='date' value='$datepost' onchange='ff()' name='date' class='form-control col-lg-10 mr-1 mb-2' placeholder='Select date to view'>";
+                        echo "<input type='date' value='$datepost' onchange='ff()' name='date' class='form-control col-sm-5 mr-1 mb-2' placeholder='Select date to view'>";
                     }else{
-                        echo "<input type='date' onchange='ff()' name='date' class='form-control col-sm-10 mr-1 mb-2' placeholder='Select date to view'>";
+                        echo "<input type='date' onchange='ff()' name='date' class='form-control col-sm-5 mr-1 mb-2' placeholder='Select date to view'>";
                     }
                 
                       ?>
