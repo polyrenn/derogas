@@ -1866,7 +1866,7 @@
                             if($goOther){
                                 $oth = mysqli_num_rows($goOther);
 
-                                $k = "SELECT SUM(kg) FROM finalsales  WHERE datee = '$dt' AND branch = '$branchCode' AND amount != 0 ";
+                                $k = "SELECT SUM(tquant) FROM finalsales  WHERE datee = '$dt' AND branch = '$branchCode' AND amount != 0 ";
                                 $kk = mysqli_query($connect, $k);
                                 $kr = mysqli_fetch_array($kk);
                                 $alkg = $kr['SUM(tquant)'];
