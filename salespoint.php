@@ -1872,7 +1872,7 @@
                                 $alkg = $kr['SUM(kg)'];
                                 $alkg = $alkg / 2;
 
-                                 $ka = "SELECT SUM(amount) FROM finalsales  WHERE datee = '$dt' AND branch = '$branchCode' AND amount != 0 ";
+                                $ka = "SELECT SUM(amount) FROM crbs  WHERE datee = '$dt' AND branch = '$branchCode' AND amount != 0 ";
                                 $kka = mysqli_query($connect, $ka);
                                 $kra = mysqli_fetch_array($kka);
                                 $alkga = $kra['SUM(amount)'];
