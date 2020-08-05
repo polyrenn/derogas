@@ -1869,7 +1869,7 @@
                                 $k = "SELECT SUM(kg) FROM finalsales  WHERE datee = '$dt' AND branch = '$branchCode' AND amount != 0 ";
                                 $kk = mysqli_query($connect, $k);
                                 $kr = mysqli_fetch_array($kk);
-                                $alkg = $kr['SUM(kg)'];
+                                $alkg = $kr['SUM(tquant)'];
 
                                  $ka = "SELECT SUM(amount) FROM finalsales  WHERE datee = '$dt' AND branch = '$branchCode' AND amount != 0 ";
                                 $kka = mysqli_query($connect, $ka);
