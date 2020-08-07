@@ -795,7 +795,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
+                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' AND category LIKE '%Offline%'  ";
                                         $ar = mysqli_query($connect, $arr);
 
 
@@ -830,7 +830,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
+                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' AND category LIKE '%Offline%' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
@@ -865,7 +865,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
+                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' AND category LIKE '%Offline%' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
@@ -900,7 +900,7 @@ overflow-y: hidden;
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
 
-                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' ";
+                                        $arr = "SELECT finalsales.kg, finalsales.quantity, finalsales.category FROM finalsales WHERE finalsales.reciept = '$rrec' AND finalsales.branch = '$branchCode' AND datee = '$date' AND category LIKE '%Offline%' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
