@@ -291,7 +291,7 @@ function printContent(el){
                 <button class="btn btn-outline-primary" data-toggle="modal" data-target="#cusReg">Register New Customer</button>
 
                 <button class="btn btn-outline-info" data-toggle="modal" data-target="#report">My report for today</button>
-                <button class="btn btn-outline-danger" > <a href="crbHome2.php" style="text-decoration: none; ">Upload Offline sales</a> </button>
+               <!-- <button class="btn btn-outline-danger" > <a href="crbHome2.php" style="text-decoration: none; ">Upload Offline sales</a> </button> -->
                 </div>
                 <div style="justify-content: center; margin-top: 1rem;" class="row">
                     <form action="off.php" method="post">
