@@ -293,6 +293,11 @@ function printContent(el){
                 <button class="btn btn-outline-info" data-toggle="modal" data-target="#report">My report for today</button>
                 <button class="btn btn-outline-danger" > <a href="crbHome2.php" style="text-decoration: none; ">Upload Offline sales</a> </button>
                 </div>
+                <div style="justify-content: center; margin-top: 1rem;" class="row">
+                    <form action="off.php" method="post">
+                        <button name="offline" type="submit" class="btn btn-success">Upload Offline</button>
+                    </form>    
+                </div>
                     <h5 class="text-primary mt-2" align="center"><?php echo $status ?></h5>
 
             </div>
