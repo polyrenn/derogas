@@ -39,7 +39,6 @@
             <ul class="nav navbar-nav navbar-right pull-right float-right">
         <li class="text-white mr-3"><a class="text-primary" href="team.php"><b>Our Team</b></a></li>
         <li class="text-white mr-3"><a class="text-primary" href="contact.php"><b>Contact Us</b></a></li>
-        <li class="text-white mr-3"><a class="text-primary" href="portal.php"><b>Goto portal</b></a></li>
     </ul>
         
     </ul>

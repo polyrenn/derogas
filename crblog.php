@@ -372,7 +372,7 @@ overflow-y: hidden;
                     var xmlhttp = new XMLHttpRequest();
                         xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("c-report").innerHTML = this.responseText;
+                            document.getElementById("table").innerHTML = this.responseText;
                         }
                     };
                     let code = document.getElementById('opt').value;
@@ -414,7 +414,7 @@ overflow-y: hidden;
                   </form>
             </div>
             
-            <div id="c-report" class="row">
+            <div style="overflow-x:auto" id="table" class="container-fluid">
 
             </div>
             
