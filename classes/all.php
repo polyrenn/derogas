@@ -2,7 +2,7 @@
     
     error_reporting (E_ALL ^ E_NOTICE);
     
-  $connect = mysqli_connect('localhost', 'root', 'aicogas', 'solex');
+  $connect = mysqli_connect('localhost', 'root', 'YES', 'solex');
     
     // if(!$connect){
     
@@ -149,6 +149,54 @@
 
             
         }
+
+
+        public function getCompanyBranchCodeR(){
+
+            $designation = $_SESSION["designation"];
+
+            if ($designation == 'Supervisor') {
+                $company = $_SESSION['CompanyName'];
+            $sql = "SELECT company.CompanyName, gasStations.Bname, gasStations.Bcode FROM company, gasStations WHERE company.CompanyCode = gasStations.company AND CompanyName != 'Almarence' AND company.CompanyName = '$company'";
+            $result = mysqli_query($this->con , $sql);
+            
+            while($row = mysqli_fetch_array($result)){
+                $com = $row['CompanyName'];
+                $code = $row['Bcode'];
+                $name = $row['Bname'];
+                
+                
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo " <input onclick='ff()' name='branch' type='radio' value=".$code.">
+                    <label class='label' for=".$name.">".$name."</label><br> ";
+                }
+            }
+            }else{
+                $company = $_SESSION['CompanyName'];
+            $sql = "SELECT company.CompanyName, gasStations.Bname, gasStations.Bcode FROM company, gasStations WHERE company.CompanyCode = gasStations.company AND CompanyName != 'Almarence'";
+            $result = mysqli_query($this->con , $sql);
+            
+            while($row = mysqli_fetch_array($result)){
+                $com = $row['CompanyName'];
+                $code = $row['Bcode'];
+                $name = $row['Bname'];
+                
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo " <input onclick='ff()' name='branch' type='radio' value=".$code.">
+                    <label class='label' for=".$name.">".$name."</label><br> ";
+                }
+               
+            }
+            }
+
+            
+        }
+
+
 
 
 
@@ -1854,33 +1902,18 @@
         
         //pull crb report
         public function crbReport(){
-            $branchCode = $_SESSION['Bcode'];
-            $date = date('Y-m-d', strtotime('now'));
+            $branchCode = $_GET['bcode'];
+            if(isset($_GET['date']) && $_GET['date'] != "") {
+                $date = $_GET['date'];
+            } else {
+                $date = date('Y-m-d', strtotime('now'));
+            }
+           
             
             $train = "SELECT SUM(tquant), SUM(amount) FROM crbs WHERE datee = '$date' AND branch = '$branchCode' ";
             $su = mysqli_query($this->con , $train);
             
-            if($su){
-                
-                while($trone = mysqli_fetch_array($su)){
-                    $totalq = $trone['SUM(tquant)'];
-                    $totalam = $trone['SUM(amount)'];
-                    
-                }
-                
-                
-                echo "<tr class='bg-info'>";
-                echo "<th scope='row' class='text-white'>Total</th>";
-                echo "<th scope='row' class='text-white'></th>";
-                echo "<th scope='row' class='text-white'>".number_format($totalq)." Kg</th>";
-                echo "<th scope='row' class='text-white'>".number_format($totalam)."</th>";
-                
-                echo "</tr>";
-                
-                
-            }else{
-                echo "error in query";
-            }
+           
             
             $report = "SELECT * FROM crbs WHERE datee = '$date' AND branch = '$branchCode'";
             $run = mysqli_query($this->con , $report);
@@ -1915,6 +1948,28 @@
                     }
                     
                 }
+            }
+
+            if($su){
+                
+                while($trone = mysqli_fetch_array($su)){
+                    $totalq = $trone['SUM(tquant)'];
+                    $totalam = $trone['SUM(amount)'];
+                    
+                }
+                
+                
+                echo "<tr class='bg-info'>";
+                echo "<th scope='row' class='text-white'>Total</th>";
+                echo "<th scope='row' class='text-white'></th>";
+                echo "<th scope='row' class='text-white'>".number_format($totalq)." Kg</th>";
+                echo "<th scope='row' class='text-white'>".number_format($totalam)."</th>";
+                
+                echo "</tr>";
+                
+                
+            }else{
+                echo "error in query";
             }
             
         }

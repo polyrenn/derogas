@@ -135,6 +135,13 @@ overflow-y: hidden;
             </div>
           </div>
         </li>
+
+        <li class="nav-item">
+                  <a class="nav-link" href="crblog.php">
+                      <i class="fas fa-fw fa-cog"></i>
+                    <span><b>Crb Log</b></span></a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider">
 
