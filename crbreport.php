@@ -17,8 +17,7 @@ $createStation = new All($connect);
                       echo "<tbody>";
             
                       echo $createStation->crbReport();
-                      echo $_GET['bcode'];
-                      echo $_GET['date'];
+                      
                       echo "</tbody>";
            echo "</table>" 
 
