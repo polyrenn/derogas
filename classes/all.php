@@ -2,7 +2,7 @@
     
     error_reporting (E_ALL ^ E_NOTICE);
     
-  $connect = mysqli_connect('localhost', 'root', 'aicogas', 'solex');
+  $connect = mysqli_connect('localhost', 'root', 'YES', 'solex');
     
     // if(!$connect){
     
@@ -105,6 +105,53 @@
 
             
         }
+
+
+        public function getCompanyBranchCodeS(){
+
+            $designation = $_SESSION["designation"];
+
+            if ($designation == 'Supervisor') {
+                $company = $_SESSION['CompanyName'];
+            $sql = "SELECT company.CompanyName, gasStations.Bname, gasStations.Bcode FROM company, gasStations WHERE company.CompanyCode = gasStations.company AND CompanyName != 'Almarence' AND company.CompanyName = '$company'";
+            $result = mysqli_query($this->con , $sql);
+            
+            while($row = mysqli_fetch_array($result)){
+                $com = $row['CompanyName'];
+                $code = $row['Bcode'];
+                $name = $row['Bname'];
+                
+                
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo "<option value=".$code.">".$com." : ".$name."</option>";
+                }
+            }
+            }else{
+                $company = $_SESSION['CompanyName'];
+            $sql = "SELECT company.CompanyName, gasStations.Bname, gasStations.Bcode FROM company, gasStations WHERE company.CompanyCode = gasStations.company AND CompanyName != 'Almarence'";
+            $result = mysqli_query($this->con , $sql);
+            
+            while($row = mysqli_fetch_array($result)){
+                $com = $row['CompanyName'];
+                $code = $row['Bcode'];
+                $name = $row['Bname'];
+                
+                if(isset($_POST['bcode']) && $_POST['bcode'] == $code) {
+                    echo "<option selected='selected' value=".$code.">".$com." : ".$name."</option>";
+                }else {
+                    echo "<option value=".$code.">".$com." : ".$name."</option>";
+                }
+               
+            }
+            }
+
+            
+        }
+
+
+
         //create a new gas stattion
         public function createGasStation($company, $bname, $bcode, $loadNumber, $baddress, $loadType, $destination,  $btankA, $btankB, $total, $bpurchasePrice, $btankUse, $date){
             

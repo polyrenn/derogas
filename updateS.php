@@ -282,6 +282,10 @@
 
           <div class="container-fluid">
 
+          <div id="stock">
+
+          </div>
+
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Update Stock Records</h1>
       
@@ -308,10 +312,24 @@
                       <div class="form-group">
 
                       <div class="form-group">
+                      <script>
+                          function showStock() {
+                                var xmlhttp = new XMLHttpRequest();
+                                xmlhttp.onreadystatechange = function() {
+                                  if (this.readyState == 4 && this.status == 200) {
+                                    document.getElementById("stock").innerHTML = this.responseText;
+                                  }
+                                };
+                                let code = document.getElementById('opt').value;
+                                xmlhttp.open("GET", "stockdetails.php?bcode=" + code, true);
+                                xmlhttp.send();
+                              }
+                            
+                      </script>
 
-                      <select class="form-control" name="bcode">
+                      <select id="opt" onchange="showStock()" class="form-control" name="bcode">
                       <option>Select Branch </option>
-                      <?php  echo $createStation->getCompanyBranchCode();?>
+                      <?php  echo $createStation->getCompanyBranchCodeS();?>
                       </select>
 
                       </div>
