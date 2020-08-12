@@ -740,10 +740,10 @@ overflow-y: hidden;
                         <th scope='col' colspan="2">CRB</th>
                       <th scope='col' colspan="2">Reciept</th>
                       <th scope='col' colspan="2">Description</th>
-                      <th scope='col'>Sales Amount</th>
-                      <th scope='col'>Tank</th>
-                      <th scope='col'>Final Amount</th>
                       <th scope='col'>Kg</th>
+                      <th scope='col'>Amount</th>
+                      <th scope='col'>Payment Method</th>
+                      <th scope='col'>Tank</th>
                       
                   
                       <th scope='col'>Balance Stock</th>
@@ -763,6 +763,7 @@ overflow-y: hidden;
                               $rrec = $fin['reciept'];
                               $amount = $fin['amount'];
                               $finalA = $fin['finalTotal'];
+                              $paymentMeth = $fin['payment'];
                               $change = $fin['changee'];
                               $cdebit = $amount - $finalA;
                               $categ = $fin['category'];
@@ -812,10 +813,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
+                                    <td class='text-white'>".$tkg." Kg</td>
                                     <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
                                     <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
-                                        <td class='text-white'>".$tkg." Kg</td>
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
@@ -847,10 +848,10 @@ overflow-y: hidden;
                                     ?></td>
                                     <?php 
                                     echo "
+                                    <td class='text-white'>".$tkg." Kg</td>
                                     <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
                                     <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
-                                     <td class='text-white'>".$tkg." Kg</td>
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
@@ -882,10 +883,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
-                                    <td class='text-white'>".number_format($cash)." NGN</td>
-                                    <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
                                     <td class='text-white'>".$tkg." Kg</td>
+                                    <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
+                                    <td class='text-white'>".$tank."</td>
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
@@ -917,10 +918,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
-                                    <td class='text-white'>".number_format($cash)." NGN</td>
-                                    <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
                                     <td class='text-white'>".$tkg." Kg</td>
+                                    <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
+                                    <td class='text-white'>".$tank."</td>
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
@@ -954,10 +955,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
+                                    <td class='text-white'>".$tkg." Kg</td>
                                     <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
                                     <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
-                                        <td class='text-white'>".$tkg." Kg</td>
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
@@ -988,10 +989,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
+                                    <td>".$tkg." Kg</td>
                                     <td>".number_format($cash)." NGN</td>
-                                    <td>".$tank."</td>
-                                    <td>".number_format($finalA)." NGN</td>
-                                     <td>".$tkg." Kg</td>
+                                    <td>".$paymentMeth."</td>
+                                    <td>".$tank."</td> 
                                     <td>".$bstock." KG</td>
                                     <td>".$time."</td>
                                     </tr>
@@ -1023,10 +1024,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
-                                    <td class='text-white'>".number_format($cash)." NGN</td>
-                                    <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
                                     <td class='text-white'>".$tkg." Kg</td>
+                                    <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
+                                    <td class='text-white'>".$tank."</td>  
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
@@ -1058,10 +1059,10 @@ overflow-y: hidden;
                                     ?></td colspan="2">
                                     <?php 
                                     echo "
-                                    <td class='text-white'>".number_format($cash)." NGN</td>
-                                    <td class='text-white'>".$tank."</td>
-                                    <td class='text-white'>".number_format($finalA)." NGN</td>
                                     <td class='text-white'>".$tkg." Kg</td>
+                                    <td class='text-white'>".number_format($cash)." NGN</td>
+                                    <td class='text-white'>".$paymentMeth."</td>
+                                    <td class='text-white'>".$tank."</td>   
                                     <td class='text-white'>".$bstock." KG</td>
                                     <td class='text-white'>".$time."</td>
                                     </tr>
