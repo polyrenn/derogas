@@ -307,18 +307,22 @@ overflow-y: hidden;
     </div>
 
     <div class="row">
-
+                  <script>
+                        function ff() {
+                            document.getElementById('pull-records').submit();
+                        }
+                  </script>
     <div class="col-lg-10 form-group">
 
-    <form action=" " method="POST" >
+    <form id="pull-records" action=" " method="POST" >
         
-      <select class="form-control" name="bcode">
+      <select onchange="ff()" class="form-control" name="bcode">
       <option>Select Branch </option>
       <?php  echo $createStation->getCompanyBranchCode();?>
       </select>
       </div>
       
-      <button type="submit" name="submit" class="form-control col-lg-2 btn btn-success">View price list</button>
+      <!-- <button type="submit" name="submit" class="form-control col-lg-2 btn btn-success">View price list</button> -->
 
       </form>
 

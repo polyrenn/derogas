@@ -68,6 +68,21 @@
       $final = "SELECT * FROM finalsales WHERE branch = '$branchCode' AND datee = '$date'";
       $gofinal = mysqli_query($connect, $final);
 
+      $pos = "SELECT SUM(cash) FROM finalsales WHERE branch = '$branchCode'  AND datee = '$date'  AND payment = 'POS'  ";
+      $gopos = mysqli_query($connect, $pos);
+      while($ppos = mysqli_fetch_array($gopos)) {
+        $finalpos = $ppos['SUM(cash)'];
+      }
+
+      $fs = "SELECT SUM(cash) FROM finalsales WHERE branch = '$branchCode' AND datee = '$date' AND payment = 'Cash' ";
+      $fss = mysqli_query($connect, $fs);
+      
+      while($k = mysqli_fetch_array($fss)){
+          $totalcash = $k['SUM(cash)'];
+                        
+      }
+    
+
       $clo = "SELECT * FROM finalsales WHERE branch = '$branchCode' AND datee = '$date' AND category != 'Switchcontroler'";
       $goclo = mysqli_query($connect, $clo);
 
@@ -1279,11 +1294,22 @@ overflow-y: hidden;
                           <tr>
                          
                           <td colspan='6'><b>Total Cash</b></td>
-                          <td colspan='7'><b> ".number_format($fcash)." NGN</b></td>
+                          <td colspan='7'><b> ".number_format($totalcash)." NGN</b></td>
                         
                           
                           </tr>
                           ";
+
+                          echo "
+                          <tr>
+                         
+                          <td colspan='6'><b>Total POS</b></td>
+                          <td colspan='7'><b> ".number_format($finalpos)." NGN</b></td>
+                        
+                          
+                          </tr>
+                          ";
+
                                         echo "
                                         <tr>
                                         

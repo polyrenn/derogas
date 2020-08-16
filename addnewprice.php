@@ -295,7 +295,7 @@
 
             
 
-<div class="col-12 col-lg-4 mb-4">
+<div class="col-12 col-lg-6 mb-4">
 
               <div class="card shadow mb-4">
                   <div class="card-header py-3">
@@ -343,6 +343,16 @@
 
 <table class='table table-striped table-hover'>
 <tr>
+<td>
+1KG
+ 
+</td>
+
+
+<td>
+<input type="checkbox" name="cylinder[1kg]" value="1"/>
+</td>
+
 <td>
 3KG
  
