@@ -459,7 +459,7 @@ overflow-y: hidden;
         $renn = "SELECT * FROM switchlog WHERE branch = '$branchCode' AND datee = '$date'";
         $renns = mysqli_query($connect, $renn);
         $rennrow = mysqli_fetch_array($renns);
-        $action = $rennrow['actionn'];
+        $action = $rennrow['actionn']; 
         
         if($action == 'Tank A'){
             
