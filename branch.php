@@ -456,7 +456,12 @@ overflow-y: hidden;
         $tannkA = $row['BtankA'];
         $tannkB = $row['BtankB'];
         
-        if($tUse == 'Tank A'){
+        $renn = "SELECT * FROM switchlog WHERE branch = '$branchCode' AND datee = '$date'";
+        $renns = mysqli_query($connect, $renn);
+        $rennrow = mysqli_fetch_array($renns);
+        $action = $rennrow['actionn'];
+        
+        if($action == 'Tank A'){
             
             if(isset($_POST['date'])){
                 $date = $ddaattee;
@@ -465,14 +470,14 @@ overflow-y: hidden;
             }
             
             $tank = 'Tank B';
-            $gf = "SELECT * FROM finalsales WHERE tankUse = '$tank' AND branch = '$branchCode' AND category != 'Switchcontroler' ORDER BY id DESC LIMIT 1";
+            $gf = "SELECT * FROM finalsales WHERE tankUse = '$tank' AND datee = '$date' AND branch = '$branchCode' AND category != 'Switchcontroler' ORDER BY id DESC LIMIT 1";
             $ggf = mysqli_query($connect, $gf);
             $tow = mysqli_fetch_array($ggf);
             $bstock = $tow['balancee'];
             $opening = $tow['opening'];
             
             
-            $gff = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
+            $gff = "SELECT * FROM finalsales WHERE tankUse = '$action' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
             $ggff = mysqli_query($connect, $gff);
             $towf = mysqli_fetch_array($ggff);
             $bstockf = $towf['balancee'];
@@ -540,11 +545,11 @@ overflow-y: hidden;
             ";
             echo "
             
-            <h6 class='text-info' align='center'><b>Load No: ".$nowtank." | Current Tank: ".$tUse." | Opening Stock : ".$bop."  Kg | Balance Stock : ".$bstockf." Kg | Sold : ".$soldk." Kg | Sales Count : ".number_format($fcc)."</b></h6>
+            <h6 class='text-info' align='center'><b>Load No: ".$nowtank." | Current Tank: ".$action." | Opening Stock : ".$bop."  Kg | Balance Stock : ".$bstockf." Kg | Sold : ".$soldk." Kg | Sales Count : ".number_format($fcc)."</b></h6>
             
             
             ";
-        }elseif($tUse == 'Tank B'){
+        }elseif($action == 'Tank B'){
             
             if(isset($_POST['date'])){
                 $date = $ddaattee;
@@ -553,14 +558,14 @@ overflow-y: hidden;
             }
             
             $tank = 'Tank A';
-            $gf = "SELECT * FROM finalsales WHERE tankUse = '$tank' AND branch = '$branchCode' AND category != 'Switchcontroler' ORDER BY id DESC LIMIT 1" ;
+            $gf = "SELECT * FROM finalsales WHERE tankUse = '$tank' AND datee = '$date' AND branch = '$branchCode' AND category != 'Switchcontroler' ORDER BY id DESC LIMIT 1" ;
             $ggf = mysqli_query($connect, $gf);
             $tow = mysqli_fetch_array($ggf);
             $bstock = $tow['balancee'];
             $opening = $tow['opening'];
             
             
-            $gff = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
+            $gff = "SELECT * FROM finalsales WHERE tankUse = '$action' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
             $ggff = mysqli_query($connect, $gff);
             $towf = mysqli_fetch_array($ggff);
             $bstockf = $towf['balancee'];
@@ -628,7 +633,7 @@ overflow-y: hidden;
             ";
             echo "
             
-            <h6 class='text-info' align='center'><b>Load No: ".$nowtank." | Current Tank: ".$tUse." | Opening Stock : ".$bop." Kg | Balance Stock : ".$bstockf." Kg | Sold : ".$soldk." Kg | Sales Count : ".number_format($fcc)."</b></h6>
+            <h6 class='text-info' align='center'><b>Load No: ".$nowtank." | Current Tank: ".$action." | Opening Stock : ".$bop." Kg | Balance Stock : ".$bstockf." Kg | Sold : ".$soldk." Kg | Sales Count : ".number_format($fcc)."</b></h6>
             
             
             ";
