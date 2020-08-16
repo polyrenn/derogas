@@ -456,7 +456,7 @@ overflow-y: hidden;
         $tannkA = $row['BtankA'];
         $tannkB = $row['BtankB'];
         
-        $renn = "SELECT * FROM switchlog WHERE branch = '$branchCode' AND datee = '$date'";
+        $renn = "SELECT * FROM switchLog WHERE branch = '$branchCode' AND datee = '$date'";
         $renns = mysqli_query($connect, $renn);
         $rennrow = mysqli_fetch_array($renns);
         $action = $rennrow['actionn']; 
