@@ -472,7 +472,7 @@ overflow-y: hidden;
             $opening = $tow['opening'];
             
             
-            $gff = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND category != 'Switchcontroler' AND datee = '$date' ORDER BY id DESC LIMIT 1";
+            $gff = "SELECT * FROM finalsales WHERE tankUse = '$tUse' AND branch = '$branchCode' AND datee = '$date' ORDER BY id DESC LIMIT 1";
             $ggff = mysqli_query($connect, $gff);
             $towf = mysqli_fetch_array($ggff);
             $bstockf = $towf['balancee'];
@@ -487,7 +487,7 @@ overflow-y: hidden;
             $towfza = mysqli_fetch_array($ggffza);
             $soldka = $towfza['SUM(kg)'];
             
-            $gffa = "SELECT * FROM finalsales WHERE tankUse = '$tank' AND branch = '$branchCode' AND category != 'Switchcontroler' AND datee = '$date' ORDER BY timee DESC LIMIT 1";
+            $gffa = "SELECT * FROM finalsales WHERE tankUse = '$tank' AND branch = '$branchCode' AND category = 'Switchcontroler' AND datee = '$date' ORDER BY timee DESC LIMIT 1";
             $ggffa = mysqli_query($connect, $gffa);
             $towfa = mysqli_fetch_array($ggffa);
             $bop = $towfa['opening'];
