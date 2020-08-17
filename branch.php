@@ -125,6 +125,20 @@ $Offline = "SELECT  SUM(finalTotal), SUM(cash), SUM(kg), SUM(changeD) FROM final
       $final = "SELECT *  FROM finalsales WHERE branch = '$branchCode' AND datee = '$date' ";
           $gofinal = mysqli_query($connect, $final);
 
+          $pos = "SELECT SUM(cash) FROM finalsales WHERE branch = '$branchCode'  AND datee = '$date'  AND payment = 'POS'  ";
+      $gopos = mysqli_query($connect, $pos);
+      while($ppos = mysqli_fetch_array($gopos)) {
+        $finalpos = $ppos['SUM(cash)'];
+      }
+
+      $fs = "SELECT SUM(cash) FROM finalsales WHERE branch = '$branchCode' AND datee = '$date' AND payment = 'Cash' ";
+      $fss = mysqli_query($connect, $fs);
+      
+      while($k = mysqli_fetch_array($fss)){
+          $totalcash = $k['SUM(cash)'];
+                        
+      }
+
           $clo = "SELECT * FROM finalsales WHERE branch = '$branchCode' AND datee = '$date' AND category != 'Switchcontroler'";
       $goclo = mysqli_query($connect, $clo);
 

@@ -487,7 +487,7 @@ function printContent(el){
             
             echo "
             
-            <h6 class='text-danger' align='center'><b>Previous Tank: ".$tank." | Opening Stock : ".$openingfx." Kg | Balance Stock : ".$bstock." Kg </b></h6>
+            <h6 class='text-danger' align='center'><b>Previous Tank: ".$tank." | Opening Stock : ".$openingfx." Kg | Balance Stock : ".$bstock." Kg | Sold : $soldka Kg   </b></h6>
             
             
             ";
