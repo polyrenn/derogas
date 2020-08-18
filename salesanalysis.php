@@ -679,7 +679,7 @@ Logout
                 }
                 
                 echo " <td>Invoice#: ".$invoice."<br>Time: ".$time."<br> Customer: ".$customer."<br> Total Kg: ".$kkkg." Kg
-                <br> Amount: ".number_format($money)." NGN <br> Change: ".$change." NGN <br> Change Debited: ".$changeD."
+                <br> Amount: ".number_format($money)." NGN <br> Change: ".$changeD." NGN <br> Change Debited: ".$changeD."
                 </td>";
             }else{
                 echo "<td>&nbsp;</td>";
