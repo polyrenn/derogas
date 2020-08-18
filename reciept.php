@@ -16,6 +16,7 @@
       $reciept = $_GET['reciept'];
       $branchCode = $_GET['branch'];
       $company = $_GET['CompanyName'];
+      $date = $_GET['date'];
   }
   ///////////////////////////////////////////////////////////
 
@@ -24,16 +25,16 @@
 
 
 
-  $sql = "SELECT * FROM completeSales WHERE branch = '$branchCode' AND reciept = '$reciept'";
+  $sql = "SELECT * FROM completeSales WHERE branch = '$branchCode' AND reciept = '$reciept' AND datee = '$date'";
   $go = mysqli_query($connect, $sql);
 
 
-  $sql2 = "SELECT * FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept'";
+  $sql2 = "SELECT * FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND datee = '$date'";
   $go2 = mysqli_query($connect, $sql2);
 
 
 
-  $train = "SELECT * FROM finalsales WHERE reciept = $reciept AND branch = '$branchCode' ";
+  $train = "SELECT * FROM finalsales WHERE reciept = $reciept AND branch = '$branchCode' AND datee = '$date' ";
   $su = mysqli_query($connect, $train);
 
 

@@ -825,7 +825,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr style='background-color:#5c1529'>
                                       <td class='text-white' colspan='2'>".$rrec."</td>
-                                   <td colspan='2' ><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                   <td colspan='2' ><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
@@ -860,7 +860,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr style='background-color: #65694c'>
                                    <td colspan='2' class='text-white'>".$rrec."</td>
-                                    <td colspan='2' ><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                    <td colspan='2' ><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
@@ -895,7 +895,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr style='background-color:#152159'>
                                     <td class='text-white' colspan='2'>".$rrec."</td>
-                                    <td colspan='2' class='text-white'><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                    <td colspan='2' class='text-white'><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
@@ -930,7 +930,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr style='background-color:#155924' >
                                   <td class='text-white' colspan='2'>".$rrec."</td>
-                                   <td colspan='2' ><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                   <td colspan='2' ><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
@@ -967,7 +967,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr class='bg-danger'>
                                       <td class='text-white' colspan='2'>".$rrec."</td>
-                                   <td colspan='2' class='text-white'><a href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                   <td colspan='2' class='text-white'><a href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
@@ -1002,7 +1002,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr>
                                    <td colspan='2'>".$rrec."</td>
-                                    <td colspan='2'><a href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                    <td colspan='2'><a href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2">
                                     <?php 
@@ -1036,7 +1036,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr class='bg-primary'>
                                     <td class='text-white' colspan='2'>".$rrec."</td>
-                                    <td colspan='2' class='text-white'><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                    <td colspan='2' class='text-white'><a class='text-white' href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
@@ -1071,7 +1071,7 @@ overflow-y: hidden;
                                     echo "
                                     <tr class='bg-success' >
                                   <td class='text-white' colspan='2'>".$rrec."</td>
-                                   <td colspan='2' class='text-white'><a href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."''><b> $cn <br> $cp </b></a></td>
+                                   <td colspan='2' class='text-white'><a href='reciept.php?reciept=".$rrec."&branch=".$branchCode."&CompanyName=".$company."&date=".$date."''><b> $cn <br> $cp </b></a></td>
                                     ";
                                     ?><td colspan="2" class='text-white'>
                                     <?php 
