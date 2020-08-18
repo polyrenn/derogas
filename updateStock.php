@@ -327,6 +327,24 @@
                                 xmlhttp.open("GET", "stockdetails.php?bcode=" + code, true);
                                 xmlhttp.send();
                               }
+                              
+                              
+                              
+                              function fa() {
+                                let load = document.getElementById("exampleInputEmaill");
+                                let tankA = document.getElementById("exampleInputEmaila");
+                                if(tankA.value != '0') {
+                                    load.value = tankA.value;
+                                  }
+                               }
+
+                               function fb() {
+                                let load = document.getElementById("exampleInputEmaill");
+                                let tankB = document.getElementById("exampleInputEmailb");
+                                if(tankB.value != '0') {
+                                    load.value = tankB.value;
+                                  }
+                               }
                             
                       </script>
 
@@ -338,15 +356,15 @@
                       </div>
 
                       <div class="form-group">
-                              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Total load" name="totalLoad">
+                              <input type="number" class="form-control" id="exampleInputEmaill" aria-describedby="emailHelp" placeholder="Total load" name="totalLoad">
                       </div>
 
                       <div class="form-group">
-                              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tank A" name="tankA">
+                              <input type="number" onkeyup="fa()" class="form-control" id="exampleInputEmaila" aria-describedby="emailHelp" placeholder="Tank A" name="tankA">
                       </div>
 
                       <div class="form-group">
-                              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tank B" name="tankB">
+                              <input type="number" onkeyup="fb()" class="form-control" id="exampleInputEmailb" aria-describedby="emailHelp" placeholder="Tank B" name="tankB">
                       </div>
 
                       <div class="form-group">
