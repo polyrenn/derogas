@@ -867,7 +867,7 @@ overflow-y: hidden;
                                     <?php 
 
                                         $arr = "SELECT crbs.kg, crbs.quantity, finalsales.category FROM crbs, finalsales WHERE crbs.crbnumber = '$rrec' AND finalsales.reciept = '$rrec' AND crbs.branch = '$branchCode' AND finalsales.branch = '$branchCode' AND crbs.datee = '$date' AND 
-                                        finalsales.datee = '$date' AND finalsales.category LIKE '%Offline%' ";
+                                        finalsales.datee = '$date' AND finalsales.category LIKE '%Offline%' AND crbs.category LIKE '%Offline%' ";
                                         $ar = mysqli_query($connect, $arr);
 
 
