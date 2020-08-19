@@ -134,7 +134,7 @@ while($gapf = mysqli_fetch_array($gofinal)) {
        
 
         $sql = "INSERT INTO finalsales (branch, reciept, datee, timee, customer,category, phone, payment, cash, kg, quantity, amount, salesStatus, changee,changeD, finalTotal, tankUse, opening, balancee, closing)
-        VALUES ('$branchCode', '$reciept', '$date', '$time', '$customer', 'Offline-$category', '$phone', '$payment', '$amm', '$kggg','$q','$ammm', '$status', '$changee', '$changeD', '$finalamount', '$tank','$openTank', '$remain', '$remained')";
+        VALUES ('$branchCode', '$reciept', '$date', '$time', '$customer', 'Offline-$category', '$phone', '$payment', '$amm', '$kggg','$q','$ammm', '$status', '$changee', '$changeD', '$finalamount', '$tuse','$openTank', '$remain', '$remained')";
 
         //update customer record
         $g =  "SELECT * FROM customers WHERE Cphone = '$phone' AND branch = '$branchCode' ";
