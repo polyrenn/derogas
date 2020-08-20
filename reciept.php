@@ -376,11 +376,11 @@
   $go3 = mysqli_query($connect, $sql3);
   if($go3) {
     while($ro = mysqli_fetch_array($go3)) {
-  
-            
-      $kg = $ro['SUM(kg)'];
       
       $quantity = $ro['SUM(quantity)'];
+      $kg = $ro['SUM(kg)'] * $quantity;
+      
+      
       $amount = $ro['SUM(amount)'];
 
 }         
