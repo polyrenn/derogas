@@ -372,7 +372,7 @@
 
   }
 
-  $sql3 = "SELECT SUM(kg), SUM(quantity), SUM(amount) FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND category = '$categ' AND datee = '$date';
+  $sql3 = "SELECT SUM(kg), SUM(quantity), SUM(amount) FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND category = '$categ' AND datee = '$date'";
   $go3 = mysqli_query($connect, $sql3);
   if($go3) {
     while($ro = mysqli_fetch_array($go3)) {
