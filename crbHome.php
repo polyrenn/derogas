@@ -561,7 +561,24 @@ function printContent(el){
 
 
                 <!-- Page Heading -->
+                <div style="justify-content: center; margin-top: 1rem;" class="row">
+                    <div class="update alert alert-info col-lg-8">
+                        <div style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;">
+                           <span class="message"> 
+                            Update Available For Offline
+                            </span>
+                            <a download href='cd.cmd'>
+                            <button type="button" class='btn btn-success'>Download</button>
+                        </a>
+                        </div>
+                       
+                    </div>
+                    </div>
                 <div class="row">
+                    
                 <div class="col-lg-12">
 
                 <div class="mb-4">
