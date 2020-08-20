@@ -2,7 +2,7 @@
 
 session_start();
 
-$connect = mysqli_connect('localhost', 'root', '', 'solex');
+$connect = mysqli_connect('localhost', 'root', 'YES', 'solex');
 if($connect->connect_error) {
     echo "Connection failed";
 }else {
