@@ -1191,13 +1191,14 @@ overflow-y: hidden;
 
                                            echo "
                                              <td colspan='6'><b> Total of ".$tank." </b></a></td>
+                                             <td><b>".$tkg." Kg</b><br><b class='text-danger'>".$oKgi." Kg - Offline</b></td>
                                    
-                                    <td colspan='2'><b>".number_format($amount)." NGN</b><br><b class='text-danger'>".number_format($oAmi)." NGN - Offline</b></td>
+                                    <td colspan=''><b>".number_format($amount)." NGN</b><br><b class='text-danger'>".number_format($oAmi)." NGN - Offline</b></td>
                                  
-                                    <td><b>".number_format($finalA)." NGN</b><br><b class='text-danger'>".number_format($oFai)." NGN - Offline</b></td>
-                                    <td><b>".$tkg." Kg</b><br><b class='text-danger'>".$oKgi." Kg - Offline</b></td>
+                               
+                                  
                                     
-                                    <td colspan='2' align='right'><b>".$time."</b></td>
+                                   
                                     </tr>
                                     ";
                                           
