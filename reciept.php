@@ -17,6 +17,7 @@
       $branchCode = $_GET['branch'];
       $company = $_GET['CompanyName'];
       $date = $_GET['date'];
+      $categ = $_GET['categ'];
   }
   ///////////////////////////////////////////////////////////
 
@@ -29,12 +30,12 @@
   $go = mysqli_query($connect, $sql);
 
 
-  $sql2 = "SELECT * FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND datee = '$date'";
+  $sql2 = "SELECT * FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND datee = '$date' AND category = '$categ'";
   $go2 = mysqli_query($connect, $sql2);
 
 
 
-  $train = "SELECT * FROM finalsales WHERE reciept = $reciept AND branch = '$branchCode' AND datee = '$date' ";
+  $train = "SELECT * FROM finalsales WHERE reciept = $reciept AND branch = '$branchCode' AND datee = '$date' AND category = '$categ' ";
   $su = mysqli_query($connect, $train);
 
 
@@ -330,16 +331,16 @@
   echo "
 
   <table class='table '>
-                                  <thead>
-                                  <tr>
-                                  <th scope='col'>Cylinder Type</th>
-                                  <th scope='col'>Qty</th>
-                                          <th scope='col'>Total Kg</th>
-                                  <th scope='col'>Payable</th>
-                                
-                                  </tr>
-                                  </thead>
-                                  <tbody>
+  <thead>
+  <tr>
+  <th scope='col'><small><h5><b>Cylinder Type</b></h5></small></th>
+  <th scope='col'><small><h5><b>Qty</b></h5></small></th>
+  <th scope='col'><small><h5><b>Kg</b></h5></small></th>
+  <th scope='col'><small><h5><b>Payable</b></h5></small></th>
+  
+  </tr>
+  </thead>
+  <tbody>
 
   ";
 
@@ -360,7 +361,7 @@
           echo "<tr>";
           echo "<th scope='row'>".$kg."</th>";
           echo "<th scope='row'>".$quantity."</th>";
-          echo "<th scope='row'>".$akg." Kg</th>";
+          echo "<th scope='row'>".$kg." Kg</th>";
           echo "<th scope='row'>".number_format($amount)." NGN</th>";
           
           echo "</tr>";
@@ -370,6 +371,30 @@
   }else{
 
   }
+
+  $sql3 = "SELECT SUM(kg), SUM(quantity), SUM(amount) FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND category = '$categ'";
+  $go3 = mysqli_query($connect, $sql3);
+  if($go3) {
+    while($ro = mysqli_fetch_array($go3)) {
+  
+            
+      $kg = $ro['SUM(kg)'];
+      
+      $quantity = $ro['SUM(quantity)'];
+      $amount = $ro['SUM(amount)'];
+
+}         
+  }
+  
+            echo "<tr class='bg-primary text-white'>";
+            echo "<th scope='row'><h5><small><h5><b>Total</b></h5></small></th>";
+                echo "<th scope='row'><h5><small><h5><b>".$quantity."</b></h5></small></th>";
+                echo "<th scope='row'><h5><small><h5><b>".$kg." Kg</b></h5></small></th>";
+                echo "<th scope='row'><h5><small><h5><b>".number_format($amount)." NGN</b></h5></small></th>";
+                
+                echo "</tr>";
+                          
+
   echo "
   </tbody>
   </table>
