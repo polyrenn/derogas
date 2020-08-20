@@ -373,12 +373,18 @@
   }
 
   $sql3 = "SELECT SUM(kg), SUM(quantity), SUM(amount) FROM crbs WHERE branch = '$branchCode' AND crbnumber = '$reciept' AND category = '$categ' AND datee = '$date'";
+  $sql4 = "SELECT kg FROM finalsales WHERE branch = '$branchCode' AND reciept = '$reciept' AND category = '$categ' AND datee = '$date'";
+  $go3 = mysqli_query($connect, $sql4);
+  while($rowkg = mysqli_fetch_array($go3)) {
+    $fkg = $rowkg['kg'];
+  }
+
   $go3 = mysqli_query($connect, $sql3);
   if($go3) {
     while($ro = mysqli_fetch_array($go3)) {
       
       $quantity = $ro['SUM(quantity)'];
-      $kg = $ro['SUM(kg)'] * $quantity;
+      $kg = $fkg;
       
       
       $amount = $ro['SUM(amount)'];
