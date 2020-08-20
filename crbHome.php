@@ -561,6 +561,7 @@ function printContent(el){
 
 
                 <!-- Page Heading -->
+                <!--
                 <div style="justify-content: center; margin-top: 1rem;" class="row">
                     <div class="update alert alert-info col-lg-8">
                         <div style="
@@ -577,6 +578,7 @@ function printContent(el){
                        
                     </div>
                     </div>
+                 -->   
                 <div class="row">
                     
                 <div class="col-lg-12">
