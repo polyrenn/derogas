@@ -1941,7 +1941,7 @@
                         echo "<tr>";
                         echo "<th scope='row'>".$crb."</th>";
                         echo "<th scope='row'>".$name."</th>";
-                        echo "<th scope='row'>".number_format($tkg)."</th>";
+                        echo "<th scope='row'>".$tkg."</th>";
                         echo "<th scope='row'>".number_format($amount)."</th>";
                         echo "</tr>";
                         
