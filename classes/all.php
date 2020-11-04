@@ -668,7 +668,26 @@
             $ramp = "SELECT * FROM customers WHERE Cphone = '$phone' ";
             $rap = mysqli_query($this->con, $ramp);
             if(mysqli_num_rows($rap) > 0){
-                $message = $name."is already registered.";
+                while($row = mysqli_fetch_array($rap)){
+                    $thebranchcode = $row['branch'];
+                    
+                }
+
+            }
+    
+            $branchname = "SELECT * FROM gasstations WHERE Bcode = '$thebranchcode' ";
+            $branchq = mysqli_query($this->con, $branchname);
+            if(mysqli_num_rows($branchq) > 0){
+                while($row = mysqli_fetch_array($branchq)){
+                    $thebranch = $row['Bname'];
+                    
+                }
+
+            }
+           
+            if(mysqli_num_rows($rap) > 0){
+                $str = "is already registered at";
+                $message = $name.' '.$str.' '.$thebranch;
                 header("Location: crbHome.php?msg=true&type=error&details=". urlencode($message) );
             }else{
                 
