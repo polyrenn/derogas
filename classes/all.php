@@ -675,7 +675,7 @@
 
             }
     
-            $branchname = "SELECT * FROM gasstations WHERE Bcode = '$thebranchcode' ";
+            $branchname = "SELECT * FROM gasStations WHERE Bcode = '$thebranchcode' ";
             $branchq = mysqli_query($this->con, $branchname);
             if(mysqli_num_rows($branchq) > 0){
                 while($row = mysqli_fetch_array($branchq)){
