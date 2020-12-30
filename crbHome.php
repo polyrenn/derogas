@@ -131,10 +131,10 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
+<!--<script
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
+crossorigin="anonymous"></script> -->
 
 <script src="my.js"></script>
 
@@ -1265,7 +1265,7 @@ function printContent(el){
         <!-- End of Page Wrapper -->
 
         <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
+       <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     
         <script>
