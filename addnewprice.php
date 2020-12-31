@@ -41,7 +41,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Aicogas</title>
+<title>Derogas</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,7 +64,7 @@
 <?php echo "<a class='sidebar-brand d-flex align-items-center justify-content-center' href='.$link.'> "?>
 <div class="sidebar-brand-icon rotate-n-15">
 </div>
-<div class="sidebar-brand-text mx-3">Aicogas Admin</div>
+<div class="sidebar-brand-text mx-3">Derogas Admin</div>
 </a>
 
 <!-- Divider -->
@@ -492,7 +492,7 @@ Others
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Aicogas 2020</span>
+              <span>Copyright &copy; Derogas <?php echo date("Y")?></span>
             </div>
           </div>
         </footer>

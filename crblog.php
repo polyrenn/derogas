@@ -113,7 +113,7 @@ if(mysqli_num_rows($get) > 0){
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Aicogas</title>
+<title>Derogas</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -148,7 +148,7 @@ overflow-y: hidden;
 <?php echo "<a class='sidebar-brand d-flex align-items-center justify-content-center' href='.$link.'> "?>
 <div class="sidebar-brand-icon rotate-n-15">
 </div>
-<div class="sidebar-brand-text mx-3">Aicogas Admin</div>
+<div class="sidebar-brand-text mx-3">Derogas Admin</div>
 </a>
 
 <!-- Divider -->
