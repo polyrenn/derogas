@@ -23,7 +23,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Aicogas</title>
+    <title>Derogas</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -83,7 +83,7 @@
           <div class="container-fluid">
 
           <div class="container">
-              <h1  align="center">Almarence International Company Limited</h1>
+              <h1  align="center">DEROGAS</h1>
           </div>
 
             <!-- Page Heading -->
@@ -167,7 +167,7 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Aicogas 2020</span>
+              <span>Copyright &copy; Derogas <?php echo date("Y")?></span>
             </div>
           </div>
         </footer>
