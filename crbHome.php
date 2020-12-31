@@ -117,7 +117,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Aicogas</title>
+<title>Derogas</title>
 
 <!-- Custom fonts for this template-->
 
@@ -282,7 +282,7 @@ function printContent(el){
             <div class="container-fluid">
 
             <div class="container">
-                <h1  align="center">Almarence International Company Limited</h1>
+            <!--   <h1  align="center">Derogas</h1> -->
 
             </div>
 
@@ -1252,7 +1252,7 @@ function printContent(el){
             <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Aicogas 2020</span>
+                <span>Copyright &copy; Derogas 2020</span>
                 </div>
             </div>
             </footer>
