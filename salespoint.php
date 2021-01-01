@@ -1425,13 +1425,21 @@
 <div class='crbprint' id='crbprint'>
  <style>
  .re-logo {
-     max-width: 100%;
+     width: 50%;
+     border: 1px solid red;
+     margin-left: auto;
+     margin-right: auto;
+     display: block
+ }
+
+ .crbprint {
+     text-align: center;
  }
 
  </style>   
 
 <?php
-    echo "<img class='re-logo' src='DeroLogo.png'>";
+    echo "<img align='center' class='re-logo' src='DeroLogo.png'>";
     echo "<hr>";
     
     
