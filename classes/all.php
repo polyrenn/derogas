@@ -1155,7 +1155,7 @@
                     echo "<td scope='row' class='text-danger'><h5><b>".$kg." Kg</b></h5></td>";
                     echo "<td scope='row'><h5><b>".$quantity." </b></h5></td>";
                     echo "<td scope='row'><h5><b>".$tq." Kg</b></h5></td>";
-                    //echo "<td scope='row'><h5><b>".number_format($amount)."</b></td>";
+                    echo "<td scope='row'><h5><b>".number_format($amount)."</b></td>";
                     
                     echo "</tr>";
                     
