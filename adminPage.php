@@ -353,7 +353,7 @@
                     <div class="text-center">
                       <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
                     </div>
-                    <p>Welcome to your new admin environment as designed by <b>Orion Technologies</b> in collaboration with <b><a href="http://www.crudasl.com">Crud Automated Systems Limited</a></b> </p>
+                    <p>Welcome to your new admin environment.</p>
                   </div>
                 </div>
               </div>

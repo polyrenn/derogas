@@ -1424,13 +1424,16 @@
 
 <div class='crbprint' id='crbprint'>
  <style>
+ .re-logo {
+     max-width: 100%;
+ }
 
  </style>   
 
 <?php
-    
-    echo "<h1 style='font-size:40px' align='center'><b>".$company."</b></h1>";
+    echo "<img class='re-logo' src='DeroLogo.png'>";
     echo "<hr>";
+    
     
     $sql = "SELECT company.CompanyName, gasStations.Bname, gasStations.Baddress, gasStations.Bcode FROM company, gasStations WHERE company.CompanyCode = gasStations.company AND company.CompanyName != 'Almarence' AND company.CompanyName = '$company' ";
     $result = mysqli_query($connect , $sql);

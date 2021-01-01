@@ -82,10 +82,18 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
 
-          <div class="container">
-              <h1  align="center">DEROGAS</h1>
+          <div class="container-logo">
+              <img align="center" class="logo" src="DeroLogo.png">
           </div>
-
+          <style>
+            .container-logo {
+              display: flex;
+              justify-content: center;
+            }
+            .logo {
+              width: 35%;
+            }
+          </style>
             <!-- Page Heading -->
           
 
