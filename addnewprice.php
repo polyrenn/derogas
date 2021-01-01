@@ -292,6 +292,18 @@
             <!-- Page Heading -->
 
             <div class="row">
+            <style>
+              .kgs {
+                display: flex;
+                flex-flow: wrap;
+              }
+
+              .kg {
+                margin: 5px;
+                border: 1px solid #333333;
+                padding: 5px;
+              }
+            </style>
 
             
 
@@ -338,11 +350,37 @@
                 
                           </div>
                                               
-                          <div class="form-group">
-<h5 class="text-primary">Cylinder Size</h5>
-
+                          <div class="form-group kgs">
+<h5 style="
+    width: 100%;
+" class="text-primary">Cylinder Size</h5>
+<?php 
+  $kgcount = 50;
+  for ($x = 1; $x <= 50; $x++) {
+    echo "<div class='kg'>
+    $x KG
+     
+    
+    
+    
+    <input type='checkbox' name='cylinder[$x".'kg'."]' value='$x'/>
+    </div>";
+    
+  }
+?>
+<div class='kg'>
+    12.5KG
+     
+    
+    
+    
+    <input type='checkbox' name='cylinder[12.5kg]' value='12.5'/>
+    </div>
 <table class='table table-striped table-hover'>
 <tr>
+
+<tr>
+<!--
 <td>
 1KG
  
@@ -351,6 +389,16 @@
 
 <td>
 <input type="checkbox" name="cylinder[1kg]" value="1"/>
+</td>
+
+<td>
+2KG
+ 
+</td>
+
+
+<td>
+<input type="checkbox" name="cylinder[2kg]" value="2"/>
 </td>
 
 <td>
@@ -446,7 +494,7 @@
 </td>
 
 </tr>
-
+-->
 <tr>
 
 <td>
