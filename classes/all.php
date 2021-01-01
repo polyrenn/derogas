@@ -1155,7 +1155,7 @@
                     echo "<td scope='row' class='text-danger'><h5><b>".$kg." Kg</b></h5></td>";
                     echo "<td scope='row'><h5><b>".$quantity." </b></h5></td>";
                     echo "<td scope='row'><h5><b>".$tq." Kg</b></h5></td>";
-                    echo "<td scope='row'><h5><b>".number_format($amount)."</b></td>";
+                    echo "<td scope='row'><h5><b style='display: none'>".number_format($amount)."</b></td>";
                     
                     echo "</tr>";
                     
@@ -1165,7 +1165,7 @@
                     echo "<td scope='row'><h5><b>".$kg." Kg</b></h5></td>";
                     echo "<td scope='row'><h5><b>".$quantity." </b></h5></td>";
                     echo "<td scope='row'><h5><b>".$tq." Kg</b></h5></td>";
-                    echo "<td scope='row'><h5><b>".number_format($amount)."</b></td>";
+                    echo "<td scope='row'><h5><b style='display: none'>".number_format($amount)."</b></td>";
                     
                     echo "</tr>";
                     
@@ -1197,7 +1197,7 @@
             echo "<td scope='row' class=''><h5><b>Total</b><h5></td>";
             echo "<td scope='row' class=''><h5><b> ".$totalq." <b><h5></td>";
             echo "<td scope='row' class=''><h5><b> ".$tqq." Kg<b><h5></td>";
-            echo "<td scope='row' class='bg-success text-white'><h5><b> ".number_format($totalam)." NGN<b><h5></td>";
+            echo "<td scope='row' class='bg-success text-white'><h5><b style='display: none'> ".number_format($totalam)." NGN<b><h5></td>";
             
             echo "</tr>";
             
