@@ -2,7 +2,7 @@
     
     error_reporting (E_ALL ^ E_NOTICE);
     
-  $connect = mysqli_connect('localhost', 'root', 'YES', 'dero');
+  $connect = mysqli_connect('localhost', 'root', 'derogas', 'dero');
     
     // if(!$connect){
     
