@@ -290,7 +290,7 @@ function printContent(el){
                 <div class="col btn-group">
                 <button class="btn btn-outline-primary" data-toggle="modal" data-target="#cusReg">Register New Customer</button>
 
-                <button class="btn btn-outline-info" data-toggle="modal" data-target="#report">My report for today</button>
+            <!--    <button class="btn btn-outline-info" data-toggle="modal" data-target="#report">My report for today</button> -->
             <!--    <button class="btn btn-outline-danger" > <a href="crbHome2.php" style="text-decoration: none; ">Upload Offline sales</a> </button> -->
                 </div>
                     <h5 class="text-primary mt-2" align="center"><?php echo $status ?></h5>
@@ -616,7 +616,7 @@ function printContent(el){
 <form action="crb.php" method="POST" >
 
 <div class="col form-group">
-<input class="form-control mb-1 mt-1" type="text" name="fi" placeholder="search by phone, name or id">
+<input class="form-control mb-1 mt-1 search" type="text" name="fi" placeholder="search by phone, name or id">
 </div>
 <h5 class='text-danger' align="center">Domestic category</h5>
 <table class='table table-striped table-dark'>
