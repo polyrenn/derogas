@@ -616,7 +616,7 @@ function printContent(el){
 <form action="crb.php" method="POST" >
 
 <div class="col form-group">
-<input class="form-control mb-1 mt-1 search" type="text" name="fi" placeholder="search by phone, name or id">
+<input class="form-control mb-1 mt-1" type="text" name="fi" placeholder="search by phone, name or id">
 </div>
 <h5 class='text-danger' align="center">Domestic category</h5>
 <table class='table table-striped table-dark'>
