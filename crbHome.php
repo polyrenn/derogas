@@ -294,10 +294,16 @@ function printContent(el){
                <!-- <button class="btn btn-outline-danger" > <a href="crbHome2.php" style="text-decoration: none; ">Upload Offline sales</a> </button> -->
                 </div>
                 <div style="justify-content: center; margin-top: 1rem;" class="row">
-                    <form action="off.php" method="post">
-                        <button name="offline" type="submit" class="btn btn-success">Upload Offline</button>
+                    <form onSubmit="ff()" action="off.php" method="post">
+                        <button name="offline" type="submit" class="btn up-of btn-success">Upload Offline</button>
                     </form>    
                 </div>
+                <script>
+                    function ff() {
+                        let btn = document.querySelector('.up-of');
+                        btn.setAttribute("disabled", true);
+                    }
+                </script>
                     <h5 class="text-primary mt-2" align="center"><?php echo $status ?></h5>
 
             </div>
