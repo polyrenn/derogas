@@ -8,7 +8,7 @@
 //    echo "we connected";
 //}
 
-$connect = mysqli_connect('localhost', 'root', 'aicogas', 'solex');
+$connect = mysqli_connect('localhost', 'root', 'aicogas', 'dero');
     
     if(!$connect){
         
